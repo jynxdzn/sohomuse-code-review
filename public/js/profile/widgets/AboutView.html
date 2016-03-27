@@ -1,0 +1,68 @@
+<div class="row">
+
+    <div class="col-md-6">
+        <h1>Biography</h1>
+
+        <% if (summary) { %>
+        <p class="about-summary"><%= summary.replace("\n", "<br><br>", "g") %></p>
+        <% } %>
+
+        <p class="about-bio"><%= bio === null ? "" : bio.replace("\n", "<br><br>", "g") %></p>
+    </div>
+
+    <div class="col-md-5 col-md-offset-1">
+
+        <% if (career && (career.awards || career.occupation)) { %>
+        <ul>
+        <% if (career.occupation) { %><li><strong><%= career.occupation %></strong></li> <% } %>
+        <% if (career.awards) { %><li><strong>Awards: </strong><%= career.awards %></li> <% } %>
+        </ul>
+        <% } %>
+
+        <ul>
+            <% if (appearance.height) { %> <li><strong>Height:</strong> <%= appearance.height %> <% } %>
+            <% if (appearance.weight) { %> <li><strong>Weight:</strong> <%= appearance.weight %> <% } %>
+            <% if (appearance.hair) { %> <li><strong>Hair:</strong> <%= appearance.hair %> <% } %>
+            <% if (appearance.hairLength) { %> <li><strong>Hair Length:</strong> <%= appearance.hairLength %> <% } %>
+            <% if (appearance.eyes) { %> <li><strong>Eyes:</strong> <%= appearance.eyes %> <% } %>
+        </ul>
+
+        <% if (skills.accents.length > 0) { %>
+        <h2>Accents</h2>
+        <ul>
+            <% _.each(skills.accents, function(accent) {
+                print("<li>" + accent + "</li>");
+            }); %>
+        </ul>
+        <% } %>
+
+        <% if (skills.languages.length > 0) { %>
+        <h2>Languages</h2>
+        <ul>
+            <% _.each(skills.languages, function(lang) {
+                print("<li>" + lang + "</li>");
+            }); %>
+        </ul>
+        <% } %>
+
+        <% if (skills.performance.length > 0) { %>
+        <h2>Performance</h2>
+        <ul>
+            <% _.each(skills.performance, function(perf) {
+                print("<li>" + perf + "</li>");
+            }); %>
+        </ul>
+        <% } %>
+
+        <% if (skills.athletic.length > 0) { %>
+        <h2>Athletic</h2>
+        <ul>
+            <% _.each(skills.athletic, function(ath) {
+                print("<li>" + ath + "</li>");
+            }); %>
+        </ul>
+        <% } %>
+
+    </div>
+
+</div>

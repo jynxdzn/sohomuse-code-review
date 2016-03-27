@@ -1,0 +1,51 @@
+<% if (contactId) { %>
+
+<div class="media" data-id="<%= _id %>">
+
+    <div class="pull-left">
+        <img class="media-object contact-avatar" src="/api/v1/users/username/<%= owner.username %>/avatar?width=45&amp;height=45" width="45" height="45">
+    </div>
+
+    <div class="media-body">
+
+        <% if (contactStatus == 'new') { %>
+
+        <h5 class="media-heading">
+            New request from <%= owner.username %>.
+            <br><span class="notify-when"><% print (moment(added).fromNow()); %></span>
+        </h5>
+
+        <div class="media-footer">
+            <a class="btn btn-simple view" href="#user/<%= encodeURIComponent(owner.username) %>">View Profile</a>
+            <a class="btn btn-simple accept" href="#contacts">Accept</a>
+            <a class="btn btn-simple ignore" href="#contacts">Ignore</a>
+            <a class="btn btn-simple markRead" href="#contacts">remove</a>
+        </div>
+
+        <% } else if (contactStatus == 'accepted') { %>
+
+        <h5 class="media-heading">
+            <%= owner.username %> accepted your connection
+            <br><span class="notify-when"><% print (moment(added).fromNow()); %></span>
+        </h5>
+
+        <a href="#user/<%= encodeURIComponent(owner.username) %>" class="view">View Profile</a>,
+        <a href="#contacts" class="markRead">remove</a>
+
+        <% } else { %>
+
+        <h5 class="media-heading">
+            <%= owner.username %> removed your connection
+            <br><span class="notify-when"><% print (moment(added).fromNow()); %></span>
+        </h5>
+
+        <a href="#user/<%= encodeURIComponent(owner.username) %>" class="view">View Profile</a>,
+        <a href="#contacts" class="markRead">remove</a>
+
+        <% } %>
+
+    </div>
+
+</div>
+
+<% } %>

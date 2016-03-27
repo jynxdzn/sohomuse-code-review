@@ -1,0 +1,23 @@
+<span class="notify-item notify-messages" title="Messages" data-type="messages">
+	<img src="/img/ico/header-message.png" class="notify-icon">
+	<span class="notify-count"><% if(typeof(message) != "undefined") {print(message);}else{print("0")} %></span>
+</span>
+
+<span class="notify-item notify-contacts" title="Invites" data-type="contacts">
+	<img src="/img/ico/header-connect.png" class="notify-icon">
+	<span class="notify-count"><% if(typeof(contact) != "undefined") {print(contact);}else{print("0")} %></span>
+</span>
+
+<div class="notify-content notify-type-messages" data-type="messages" id="notify_content_messages">
+    <div class="nItem">
+        <p>No unread messages</p>
+        <a class="notify-action btn" href="#messages">View all</a>
+    </div>
+</div>
+
+<div class="notify-content notify-type-contacts" data-type="contacts" id="notify_content_contacts">
+    <div class="nItem">
+        <p>No contact requests</p>
+        <a class="notify-action btn" href="#contacts">View all contacts</a>
+    </div>
+</div>

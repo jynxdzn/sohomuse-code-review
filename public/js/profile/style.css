@@ -1,0 +1,230 @@
+.profile {
+    width: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    top:0;
+    bottom: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.profile-inner {
+    width: 100%;
+    background-image: url(/img/flare.png), url(/img/flare2.png);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 0%, 0%;
+    top:0;
+    bottom: 0;
+    padding: 10px;
+    padding-bottom: 0;
+    height: 100%;
+}
+
+.profile-container {
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+/*.row.btn-container {
+    display: none;
+    background-color: rgba(20, 20, 20, 0.9);
+    margin-left: -25px;
+    margin-right: -25px;
+    padding-left: 10px;
+    padding: 10px;
+}
+
+.row.btn-container span {
+    color: #fff;
+    margin-left: 15px;
+}
+
+.widget {
+    padding: 5px;
+    margin-top:-5px;
+    float: none;
+}
+
+.widget-inner {
+    background-image: url(/img/fore-bg.png);
+    border-radius: 3px;
+    overflow: auto;
+    margin-top: 10px;
+}*/
+
+.gallery-viewport {
+    height: 180px;
+    overflow-x: scroll;
+}
+
+.gallery-viewport a {
+    margin-left: 10px;
+}
+
+.gallery-viewport a:first-child {
+    margin-left: 0;
+}
+
+.gal.active {
+    font-weight: bold;
+    color: #000;
+}
+
+.row.gallery-container {
+    background-image: url(/img/fore-bg.png);
+    margin-left: -25px;
+    margin-right: -25px;
+    padding-left: 10px;
+    padding: 10px 15px;
+    bottom: 0;
+}
+
+.gallery-viewport-mini {
+    display: none;
+}
+
+.gallery-viewport img {
+    height: 180px;
+    width: 240px;
+}
+
+.bs-glyphicons {
+    padding-left: 0px;
+    padding-bottom: 1px;
+    margin-bottom: 20px;
+    list-style: none outside none;
+    overflow: hidden;
+}
+
+.bs-glyphicons li {
+    margin: 0px -1px -1px 0px;
+    font-size: 12px;
+    line-height: 24px;
+    border: 1px solid rgb(221, 221, 221);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.bs-glyphicons li a:hover {
+    text-decoration: none;
+}
+
+.bs-glyphicons li span {
+    margin-bottom: 10px;
+    margin-top: 5px;
+    vertical-align: middle;
+}
+
+.profile .glyphicon {
+    font-size: 24px;
+}
+
+@media (max-width: 767px) {
+    .profile {
+        background-image: url(/img/fore-bg.png);
+        background-size: auto, 0, 0;
+        padding-top: 0;
+    }
+    .profile-inner {
+        background-image: url(/img/fore-bg.png);
+        background-size: auto, 0, 0;
+        padding-top: 0;
+    }
+
+    .bcard-container {
+        margin-top: 20px;
+    }
+
+/*    .widget {
+        border: 1px solid #000;
+    }
+
+    .admin-container {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }*/
+    .section-xs {
+        border: 1px solid #3E606F;
+    }
+}
+
+@media (min-width: 768px) {
+    .profile {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+    }
+    .profile-inner {
+        background-repeat: no-repeat, no-repeat;
+        background-size: auto, auto;
+        background-position: top left, top right;
+    }
+
+/*    .row.widget-container {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+    }
+
+    .row.widget-container.edit {
+        background-color: rgba(50, 50, 50, 0.9);
+        margin-left: -25px;
+        margin-right: -25px;
+        padding-left: 10px;
+        padding: 10px;
+    }
+
+    .widget-size-1 {
+        height: 110px;
+    }
+
+    .widget-size-2 {
+        height: 230px;
+    }
+
+    .admin-container {
+        margin: 5px;
+        margin-bottom: 10px;
+    }*/
+
+    .row.gallery-container {
+        position: absolute;
+        width: 100%
+    }
+
+    .gallery-viewport-mini {
+        height: 90px;
+        display: block;
+        overflow-x: hidden;
+    }
+
+    .gallery-viewport-mini img {
+        height: 90px;
+        width: 120px;
+    }
+
+    .gallery-viewport {
+        display: none;
+    }
+
+    .gallery-actions {
+        display: none;
+    }
+
+    .row.gallery-container:hover .gallery-actions {
+        display: block;
+    }
+
+    .row.gallery-container:hover .gallery-viewport {
+        display: block;
+    }
+
+    .row.gallery-container:hover .gallery-viewport-mini {
+        display: none;
+    }
+}

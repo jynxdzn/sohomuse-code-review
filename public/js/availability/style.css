@@ -1,0 +1,71 @@
+.availability-container {
+	background-color: rgba(255, 255, 255, 0.73);
+	padding: 15px;
+}
+
+.availability-nav {
+	margin-bottom: 5px;
+}
+
+	.availability-nav-next {
+		text-align: right;
+	}
+
+
+.availability-year,
+.availability-month {
+	color: #908b81;
+	font-weight: bold;
+	display: block;
+	line-height: 1;
+}
+
+.availability-year {
+	font-size: 30px;
+	margin-bottom: 15px;
+}
+
+.availability-month {
+	text-transform: uppercase;
+	font-size: 20px;
+}
+
+.availability-year > span {
+	border-bottom: 3px solid #908b81;
+}
+
+/**
+ * Calendar
+ */
+
+	.availability-calendar {
+		border-spacing: 5px;
+    	border-collapse: separate;
+    	width: 100%;
+    }
+
+    .availability-calendar tbody tr td,
+    .availability-calendar tbody tr th {
+    	width: 14%;
+    	text-align: center;
+    	background: transparent;
+    	font-size: 12px;
+    }
+
+    /* Day name */
+    .calendar-week-header td span {
+		display: inline-block;
+		width: 22px;
+		padding-bottom: 3px;
+		border-bottom: 3px solid #707070;
+		color: #707070;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+
+	.calendar-week-row .status-free { color: #707070; }
+
+	.calendar-week-row .status-busy {
+		color: #76539b;
+		font-weight: bold;
+	}

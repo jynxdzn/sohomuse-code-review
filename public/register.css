@@ -1,0 +1,68 @@
+@import "bower_components/bootstrap/dist/css/bootstrap.css";
+@import "css/style.css";
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #fff;
+    background-image: url(../img/massive-s.png);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    color: #000;
+    font-family: "Myriad Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-bottom: 45px;
+}
+
+.navbar {
+    background-color: #212121;
+    background-image: url(../img/menu-flare.png);
+    background-repeat: no-repeat;
+    border-bottom: 0;
+    margin-bottom: 0;
+    position: relative;
+    background-image: url(../img/menu-logo.png), url(../img/menu-flare.png);
+    background-position: top right, top left;
+    border-bottom: 0;
+    margin-bottom: 90px;
+}
+
+
+.greeting {
+    color: #595959;
+    font-size: 36px;
+    font-weight: normal;
+    margin: 0 0 20px 0;
+}
+
+    .greeing p {
+        margin: 0 0 30px 0;
+        line-height: 1.4;
+    }
+
+    .greeting .inviter-name {
+        font-weight: normal;
+        color: #76539b;
+    }
+
+.intro {
+    font-size: 18px;
+    color: #000;
+}
+
+.form-control {
+    color: #848484;
+    font-size: 16px;
+}
+
+.btn-join {
+    font-size: 16px;
+    font-weight: bold;
+    background: #76539b;
+}
+
+
+.required {
+    color: #c00;
+}

@@ -1,0 +1,33 @@
+<div class="body">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="subject">You shared your business card</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 content">
+                <p>Hi <%= owner.firstName %>,<br>
+                You recently shared your business card with <strong><%= firstName %></strong>.
+
+                <!-- <% if (location && location.name) { %>
+                at <%= location.name %>.
+                <% } else { %>
+                .
+                <% } %> -->
+                <% if (tags && tags.length > 0) { %>
+                You have tagged this contact under the following categories: <%= tags.join(", ") %>.
+                <% } %>
+                To optimize your future searches, you may edit and/or add details to this contact's information.
+                If they are a creative professional you may also invite them to become a member of SohoMuse.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <a class="btn btn-primary btn-dark" href="<%= baseUrl %>/app#contact/<%= _id %>">Edit details</a>
+                <a class="btn btn-primary btn-dark" href="<%= baseUrl %>/app#contact/<%= _id %>?action=invite">Send invite</a>
+            </div>
+        </div>
+    </div>
+    <img src="<%= baseUrl %>/img/s-email.png" class="logo-img">
+</div>

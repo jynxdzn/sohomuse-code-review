@@ -1,0 +1,14 @@
+{
+  "name": "imgareaselect",
+  "homepage": "https://github.com/odyniec/imgareaselect",
+  "version": "0.9.11-rc.1",
+  "_release": "0.9.11-rc.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.9.11-rc.1",
+    "commit": "48c3fc580e95543c71efa3ca2d1c50a07bca424f"
+  },
+  "_source": "git://github.com/odyniec/imgareaselect.git",
+  "_target": "~0.9.11",
+  "_originalSource": "imgareaselect"
+}

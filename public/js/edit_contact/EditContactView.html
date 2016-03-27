@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h1>Edit Contact</h1>
+            <!-- <a class="btn-back" href="#contacts">&lt;- Go back to Contacts</a> -->
+        </div>
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-body">
+					<form class="form-horizontal" role="form" id="form-contact">
+
+						<div class="form-group">
+							<label for="firstName" class="col-sm-3 control-label">First Name</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="firstName" name="firstName" value="<%= _.escape(firstName) %>">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="lastName" class="col-sm-3 control-label">Last Name</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="lastName" name="lastName" value="<%= _.escape(lastName) %>">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="emails" class="col-sm-3 control-label">Email address</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="emails" name="emails" value="<% _.each(emails, function(email){ %><%= _.escape(email) %><% }); %>">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="phone" class="col-sm-3 control-label">Phone</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="phone" name="phone" value="<%= _.escape(phone) %>">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="location" class="col-sm-3 control-label">Location</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="location" name="location" value="<%= _.escape(location.name) %>">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="tags" class="col-sm-3 control-label">Tags</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="tags" name="tags" value="<% var tags_safe = []; _.each(tags, function(tag){ tags_safe.push(_.escape(tag)) }); %><%= tags_safe %>">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="notes" class="col-sm-3 control-label">Notes</label>
+							<div class="col-sm-9">
+								<textarea class="form-control" id="notes" name="notes"><%= _.escape(notes) %></textarea>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-9 col-sm-offset-3">
+								<button type="button" class="btn btn-primary btn-save">Save</button>
+                                <button type="button" class="btn btn-primary btn-delete">Delete</button>
+								<a class="btn btn-primary" href="#contacts">Close</a>
+							</div>
+						</div>
+					</form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

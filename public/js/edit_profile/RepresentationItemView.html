@@ -1,0 +1,8 @@
+<td>
+    <h5 class="rep-name"><%= _.escape(name) %></h5>
+    <h6 class="rep-type"><%= _.escape(type) %></h6>
+</td>
+<td class="text-right rep-actions">
+	<button class="btn btn-xs btn-representation-edit-form" data-representer-id="<%= encodeURIComponent(list_id) %>">Edit</button>
+	<button class="btn btn-xs btn-representation-delete" data-representer-id="<%= encodeURIComponent(list_id) %>">Delete</button>
+</td>

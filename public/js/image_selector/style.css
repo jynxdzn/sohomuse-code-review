@@ -1,0 +1,18 @@
+.image-selector .thumbs .img-item {
+    height: 180px;
+}
+.image-selector .thumbs .img-name {
+    word-wrap: break-word;
+}
+.image-selector .thumbs .img-thumbnail {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.image-selector .img-thumbnail.selected {
+    outline: 5px solid #76539b;
+}

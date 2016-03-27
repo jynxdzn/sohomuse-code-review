@@ -1,0 +1,51 @@
+
+<% if (type == 'local') { %>
+<div class="file-detail-col col-img">
+    <img src="/api/v1/files/<%= _id %>/thumb?width=800" class="img-responsive"/>
+</div>
+<% } else if (type == 'youtube') { %>
+<div class="file-detail-col col-video">
+    <div class="mfp-iframe-scaler">
+        <iframe class="mfp-iframe" src="//about:blank" frameborder="0" allowfullscreen data-ext-src="//www.youtube.com/embed/<%= external_id %>?autoplay=1"></iframe>
+    </div>
+</div>
+<% } else if (type == 'vimeo') { %>
+<div class="file-detail-col col-video">
+    <div class="mfp-iframe-scaler">
+        <iframe class="mfp-iframe" src="//about:blank" frameborder="0" allowfullscreen data-ext-src="//player.vimeo.com/video/<%= external_id %>?autoplay=1"></iframe>
+    </div>
+</div>
+<% } %>
+<div class="file-detail-col">
+    <div class="file-detail-inner">
+        <h1><%= name %></h1>
+        <% if (isAudio) { %>
+        <div class="clearfix">
+            <audio src="/api/v1/files/<%= _id %>/download" preload="auto" />
+        </div>
+        <p><br></p>
+        <% } %>
+        <% if (description) { %><p class="file-desc"><%= description %></p><% } %>
+        <div class="file-detail-credits">
+        <% if (credits && credits.length) { %>
+            <h4 class="file-credits-heading">Credits</h4>
+            <%
+            _.each(credits, function(credit) {
+                if (credit && credit.contact) {
+                    var tooltip = credit.contact.firstName + ' ' + credit.contact.lastName + ' - ' + credit.role;
+                    if (credit.contact.target_username) { %>
+                        <a href="#user/<%= encodeURIComponent(credit.contact.target_username) %>" class="bs-tooltip" title="<%= tooltip %>">
+                            <img class="credit-user profile-pic-medium" src="/api/v1/users/username/<%= _.escape(credit.contact.target_username) %>/avatar?width=50&amp;height=50" />
+                        </a>
+                    <% } else { %>
+                        <a class="bs-tooltip" title="<%= tooltip %>"><img class="credit-user profile-pic-medium" src="/img/card-default-square.png" width="35" height="35"></a>
+                    <% }
+                }
+            });
+            %>
+        <% } %>
+        </div>
+    </div>
+</div>
+<div style="clear:both; line-height: 0;"></div>
+<button title="Close (Esc)" type="button" class="mfp-close">×</button>

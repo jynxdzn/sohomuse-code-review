@@ -1,0 +1,13 @@
+<a class="pull-left" href="/app#projects/<%= encodeURIComponent(_id) %>">
+    <img class="media-object img-responsive" src="/api/v1/projects/<%= encodeURIComponent(_id) %>/thumbnail?height=85&amp;width=85" style="width: 85px; height: 85px;" />
+</a>
+
+<div class="media-body">
+	<h4 class="media-heading"><%= _.escape(title) %></h4>
+	<p>
+		<span class="item-count count-collaborators"><img src="/img/ico/person.png" width="16" height="16"><%= collaborators.length %></span>
+		<span class="item-count count-media"><img src="/img/ico/media-mixed.png" width="16" height="16"><%= parseInt(photos.length + videos.length, 10) %></span>
+	</p>
+    <a class="btn btn-primary btn-xs" href="#user/<%= encodeURIComponent(owner.username) %>/projects/<%= encodeURIComponent(_id) %>">View</a>
+	<a class="btn btn-primary btn-xs" href="#projects/<%= encodeURIComponent(_id) %>">Edit</a>
+</div>

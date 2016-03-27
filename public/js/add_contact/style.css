@@ -1,0 +1,10 @@
+.add_contact {
+    padding-bottom: 20px;
+    margin-top: 15px;
+}
+
+@media (max-width: 767px) {
+    .add_contact .btn {
+    	margin-bottom: 15px;
+    }
+}

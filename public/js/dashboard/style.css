@@ -1,0 +1,232 @@
+
+/* Main dashboard area */
+.dashboard {
+    /* Main page BG doesn't have a flare any more. Need to add it back here otherwise the sidebar looks... weird. */
+    background-image: url(/img/flare2.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+}
+
+/* Dashboard area content (everything *not* the sidebar) */
+.dashboard-main {
+    margin: 0;
+}
+
+
+
+
+
+
+/*
+Dashboard grid.
+Unfortunately it's a big unsemantic table, but it's an easy way to get the desired layout
+*/
+.dashboard-grid {
+    width: 100%;
+    display: block;
+    border-spacing: 0;
+    padding: 0;
+}
+
+    /* Common styling for cells in the dashboard grid */
+    .dashboard-grid .dashboard-cell {
+        display: block;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 15px;
+        vertical-align: top;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        margin-bottom: 0;
+        position: relative;
+    }
+
+    .newsfeed-container > h2 {
+        padding-top: 15px;
+    }
+
+    .newsfeed-container .btn-more-newsitems {
+        margin-bottom: 30px;
+    }
+
+	.newsfeed-container .img-thumbnail {
+		width: auto;
+		height: 150px;
+		margin: 1% 0 1% 0;
+		border: 0;
+		float: left;
+	}
+
+	.newsfeed-container .img-thumbnail + .img-thumbnail {
+		margin-left: 1%;
+	}
+
+    input#location_name {
+        height: 24px;
+    }
+
+    /* Cell: Connections */
+    .dashboard-grid .dashboard-cell-connections {
+        background-color: rgba(64, 60, 52, 0.7);
+    }
+
+    .dashboard-grid .dashboard-cell-connections {
+        color: #fff;
+    }
+
+    .connections-inner .actor_name {
+        color: #fff;
+        font-weight: bold;
+        text-decoration: none;
+        font-style: 15px;
+        padding-left: 8px;
+    }
+
+    /* Business card */
+    .dashboard .bcard-container {
+        margin-bottom: 15px;
+    }
+
+
+
+
+/* Sidebar things */
+
+    .dashboard-location,
+    .dashboard-availability,
+    .dashboard-status,
+    .dashboard-connections {
+        margin-bottom: 10px;
+    }
+
+    .dashboard-status {
+        padding-top: 10px;
+    }
+
+
+
+
+/* Scrolly things */
+
+.bookmarks-inner,
+.nearby-inner {
+    padding: 0;
+}
+
+.dashboard-cell-bookmarks .cpaginate-pager-item {
+    height: 50px;
+    vertical-align: middle;
+    line-height: 50px;
+}
+
+.col-pager-prev,
+.col-pager-next {
+    width: 8.333333333333332%;
+    display: block;
+    float: left;
+}
+
+.col-pager-content {
+    width: 80.33333333333334%;
+    display: block;
+    float: left;
+}
+
+
+.dashboard-cell-bookmarks .btn.pull-right {
+    float: none !important;
+}
+
+
+
+
+
+@media (min-width: 992px) {
+
+    .dashboard {
+        height: 100%;
+    }
+
+    /* Just make sure containers extend the full height of the page */
+    .dashboard-body,
+    .dashboard-container {
+        height: 100%;
+    }
+
+    .dashboard-grid {
+        display: table;
+        height: 100%;
+        border-collapse: separate;
+        border-spacing: 8px;
+    }
+
+    .dashboard-grid .dashboard-cell {
+        display: table-cell;
+        width: none;
+        margin-bottom: 0;
+    }
+
+    /* Cell: Newsfeed */
+    .dashboard-grid .dashboard-cell-newsfeed {
+        /*overflow-y: scroll;*/
+        width: 50%;
+        padding: 0;
+    }
+
+    .newsfeed-container {
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        overflow-y: scroll;
+        padding: 0 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    /* Cell: projects */
+    .dashboard-grid .dashboard-cell-projects {
+        height: 60%;
+        width: 50%;
+    }
+
+    /* Cells: bookmarks/nearby connections */
+    .dashboard-grid .dashboard-cell-bookmarks,
+    .dashboard-grid .dashboard-cell-nearby {
+        width: 50%;
+    }
+
+    /* Cells: bus card/profile and connections */
+    .dashboard-grid .dashboard-cell-profile,
+    .dashboard-grid .dashboard-cell-connections {
+        width: 318px;
+        min-width: 318px;
+    }
+
+    /* Cell: Bus card/profile */
+    .dashboard-grid .dashboard-cell-profile {
+        height: 60%;
+        background: transparent;
+        padding: 0;
+    }
+
+    /* Cell: Connections */
+    .dashboard-grid .dashboard-cell-connections {
+        height: 40%;
+    }
+
+}
+
+
+
+
+@media (min-width: 1200px) {
+
+    /* Cells: bus card/profile and connections */
+    .dashboard-grid .dashboard-cell-profile,
+    .dashboard-grid .dashboard-cell-connections {
+        width: 447px;
+        min-width: 447px;
+    }
+
+}

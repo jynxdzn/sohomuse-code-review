@@ -1,0 +1,52 @@
+<div class="wrapper connections-nav">
+
+	<div class="container">
+
+		<div class="col-md-11 col-md-offset-1">
+
+			<ul class="nav nav-tabs pull-left">
+				<li<% if (type == 'contacts') { %> class="active"<% } %>><a href="#contacts" class="contacts">My Contacts</a></li>
+				<li<% if (type == 'connections') { %> class="active"<% } %>><a href="#connections" class="connections">My Connections</a></li>
+				<li<% if (type == 'bookmarks') { %> class="active"<% } %>><a href="#bookmarks" class="bookmarks">My Bookmarks</a></li>
+				<li<% if (type == 'nearby') { %> class="active"<% } %>><a href="#nearby" class="nearby">Nearby</a></li>
+				<!-- <li<% if (type == 'incoming') { %> class="active"<% } %>><a href="#incoming" class="incoming">Invites</a></li>
+				<li<% if (type == 'outgoing') { %> class="active"<% } %>><a href="#outgoing" class="outgoing">Sent Invites</a></li> -->
+			</ul>
+
+			<ul class="nav nav-tabs alphabet pull-right">
+				<li><a href="#" data-char="">All</a></li>
+				<% _.each(alphabet, function(char) { %>
+					<li><a href="#" data-char="<%= char %>"><%= char %></a></li>
+				<% }) %>
+			</ul>
+		</div>
+
+	</div>
+
+</div>
+
+<div class="wrapper connections-search">
+	<div class="container">
+		<div class="col-sm-3 col-sm-offset-9">
+			<form class="form-search" role="search">
+				<div class="input-group">
+					<input type="text" id="q" class="form-control" placeholder="Search your contacts" value="">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="submit">
+							<span class="glyphicon glyphicon-search"></span>
+						</button>
+					</span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="col-md-12">
+		<div class="tab-content">
+			<div class="tab-pane active" id="contacts">
+			</div>
+		</div>
+	</div>
+</div>

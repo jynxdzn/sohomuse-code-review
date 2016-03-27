@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <% if (typeof target_user == 'object' && typeof username == 'string') { %>
+        <h3 class="panel-title"><a href="#user/<%= encodeURIComponent(target_user.username) %>"><%= target_user.firstName %> <%= target_user.lastName %></a></h3>
+    <% } else { %>
+        <h3 class="panel-title"><%= contact.firstName %> <%= contact.lastName %></h3>
+    <% } %>
+
+  </div>
+  <div class="panel-body">
+    <%= contact.notes %>
+	<div>
+		- Awaiting approval
+	</div>
+	<button class="btn btn-default btn-revoke">Revoke invitation</button>
+  </div>
+</div>

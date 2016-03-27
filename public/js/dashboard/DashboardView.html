@@ -1,0 +1,156 @@
+
+
+
+<div class="dashboard-main dashboard-body">
+
+    <table class="dashboard-grid">
+
+        <!-- Row 1: Newsfeed, Projects, Bus card/profile -->
+        <tr>
+
+            <!-- Newsfeed -->
+            <td class="dashboard-cell dashboard-cell-newsfeed" rowspan="3">
+                <div class="newsfeed-container">
+                    <h2>My Newsfeed</h2>
+                    <div class="newsfeed-inner">
+                        (loading...)
+                    </div>
+
+					<button class="btn btn-primary btn-block btn-more-newsitems">Load more &hellip;</button>
+                </div>
+            </td>
+
+            <!-- Projects -->
+            <td class="dashboard-cell dashboard-cell-projects">
+                <h2 class="clearfix">My Projects <span class="project-count"></span>
+                    <div class="pull-right">
+                        <a href="#user/<%= encodeURIComponent(username) %>/projects" class=" btn btn-primary btn-xs btn-project-all">View All</a>
+                        <a href="#projects/add" class=" btn btn-primary btn-xs btn-project-new"><span class="plus">+</span> New</a>
+                    </div>
+                </h2>
+                <div class="projects-inner">
+                    (loading...)
+                </div>
+            </td>
+
+            <!-- Bus card/profile -->
+            <td class="dashboard-cell dashboard-cell-profile">
+                <!-- business card -->
+                <div class="bcard-container"></div>
+
+
+                <div class="dashboard-location">
+                    <form role="form" class="form-inline" id="form_toggle_location">
+                        <% if (locationName) { %>
+                            I'm in <strong class="location-name"><%= _.escape(locationName) %></strong> right now.
+                        <% } else { %>
+                            I'm haven't set a location.
+                        <% } %>
+                        <button type="button" class="btn btn-primary btn-xs pull-right action-location-toggle">Change</button></p>
+                    </form>
+
+                    <form role="form" id="form_set_location" class="form-inline initial_hide">
+                        <div class="form-group">
+                            <input id="location_name" size="30" class="form-control" name="location_name" placeholder="Enter your current location here...">
+                        </div>
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-primary btn-xs action-location-set">Set Location</button>
+                            <button type="button" class="btn btn-primary btn-xs action-location-toggle">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="dashboard-availability">
+                    <form role="form" class="form-inline" id="form_toggle_availability">
+                        <p>
+                            <% if(available === true) { %>
+                                I'm <strong class="available-text">available</strong> for booking enquiries.
+                            <% } else { %>
+                                I'm <strong class="available-text">not available</strong> for booking enquiries.
+                            <% } %>
+                            <button class="btn btn-primary btn-xs pull-right action-availability-toggle">Change</button>
+                        </p>
+                    </form>
+
+                    <form role="form" id="form_set_availability" class="initial_hide">
+                        <label class="radio-inline">
+                            <input type="radio" name="available" id="available_true" value="true"> Available
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="available" id="available_false" value="false"> Unavailable
+                        </label>
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-primary btn-xs action-availability-set">Set</button>
+                            <button type="button" class="btn btn-primary btn-xs action-availability-toggle">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="dashboard-status">
+                    <h2>Update My Status</h2>
+                    <form role="form">
+                        <div class="form-group">
+                            <textarea id="status_text" class="form-control" name="status_text" placeholder="Enter your current status here..."></textarea>
+                        </div>
+
+                        <button type="button" class="btn btn-primary btn-xs action-status-set pull-right">Set Status</button>
+                    </form>
+                </div>
+            </td>
+
+        </tr>
+
+        <!-- Row 2: Bookmarks, My Connections -->
+        <tr>
+
+            <!-- Bookmarks -->
+            <td class="dashboard-cell dashboard-cell-bookmarks">
+                <h2>
+                    My Bookmarked People <span class="bookmark-count"></span>
+                    <a class="pull-right btn btn-primary btn-xs" href="#contacts?type=bookmarks">View All</a>
+                </h2>
+                <div class="bookmarks-inner bookmarks-unpaged-wrapper initial_hide"></div>
+                <div class="row bookmarks-paged-wrapper">
+                    <div class="col-sm-1 col-pager-prev" id="dash_bookmarks_pager_prev"></div>
+                    <div class="col-sm-10 col-pager-content bookmarks-inner bookmarks-inner-paged">(loading...)</div>
+                    <div class="col-sm-1 col-pager-prev" id="dash_bookmarks_pager_next"></div>
+                </div>
+            </td>
+
+            <!-- Connections -->
+            <td class="dashboard-cell dashboard-cell-connections" rowspan="2">
+                <h2>
+                    My connections <span class="connection-count"></span>
+                    <a class="pull-right btn btn-primary btn-xs" href="#contacts?type=connections">View All</a>
+                </h2>
+                <div class="connections-inner">
+                    (loading...)
+                </div>
+            </td>
+        </tr>
+
+        <!-- Row 3: People nearby -->
+        <tr>
+            <!-- Nearby -->
+            <td class="dashboard-cell dashboard-cell-nearby">
+                <h2>
+                    People in my Area <span class="nearby-count"></span>
+                    <a class="pull-right btn btn-primary btn-xs" href="#contacts?type=nearby">View All</a>
+                </h2>
+                <div class="nearby-inner nearby-unpaged-wrapper initial_hide"></div>
+                <div class="row nearby-paged-wrapper">
+                    <div class="col-sm-1" id="dash_nearby_pager_prev"></div>
+                    <div class="col-sm-10 nearby-inner nearby-inner-paged">(loading...)</div>
+                    <div class="col-sm-1" id="dash_nearby_pager_next"></div>
+                </div>
+                <!-- <div class="nearby-inner">
+                    (loading...)
+                </div> -->
+            </td>
+        </tr>
+
+    </table>
+
+</div>

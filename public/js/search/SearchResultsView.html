@@ -1,0 +1,31 @@
+<div class="row search-header">
+	<div class="col-md-8"><h1>Search results for: <strong><%= (params && params.q ? params.q : '') %></strong></h1></div>
+	<div class="col-md-4 text-right">
+        <form class="form-horizontal form-search-sort" role="form">
+            <div class="row">
+                <label for="sort" class="col-sm-2 control-label">Sort</label>
+                <div class="col-sm-10">
+                    <select name="sort" class="search-sort form-control">
+                        <option value="id"></option>
+                        <option value="firstName">First name</option>
+                        <option value="lastName">Last name</option>
+                        <option value="city">City</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row max-height">
+
+	<div class="col-md-3 search-results-column">
+
+		<h2 class="clearfix">Filters <button class="btn btn-xs js-toggle-filters visible-xs pull-right" style="margin-bottom: 15px">Show/Hide filters</button></h2>
+        <div class="filter-container hidden-xs"></div>
+
+	</div>
+
+	<div class="col-xs-12 col-sm-12 col-md-9 search-results-column"><div class="results-container"></div></div>
+
+</div>

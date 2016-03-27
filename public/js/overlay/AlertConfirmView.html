@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="grid-md-12" style="text-align: center; margin-top: 100px">
+        <p><%= message %></p>
+        <% if (type == 'confirm') { %>
+            <button type="button" class="btn btn-primary ok">Ok</button>
+            <button type="button" class="btn btn-default dismiss">Cancel</button>
+        <% } else { %>
+            <button type="button" class="btn btn-primary dismiss">Ok</button>
+        <% } %>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+.editprofile {
+    margin-top: 15px;
+}
+
+.editprofile .tab-content {
+    margin-bottom: 20px;
+}
+
+.editprofile .nav-justified {
+    margin-bottom: 30px;
+}
+
+
+.editprofile .rep-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1;
+    margin: 0 0 5px 0;
+}
+
+
+.editprofile .rep-type {
+    font-size: 13px;
+    font-weight: normal;
+    color: #999;
+    line-height: 1;
+    margin: 0 0 5px 0
+}
+
+.editprofile .rep-actions {
+    min-width: 140px;
+}
+
+
+    @media (min-width: 768px) {
+
+        .editprofile .nav-justified {
+            margin-bottom: 15px;
+        }
+
+    }
+

@@ -1,0 +1,79 @@
+<div class="row" style="margin-bottom: 40px">
+	<div class="col-sm-12">
+		<h1>Social Media</h1>
+			<ul class="list-group list-group-social">
+			<% _.each(networks, function(network) {
+				if (social[network.name]) {
+					print('<li class="list-group-item item-network-' + network.name + '">');
+					print('<a href="' + social[network.name] + '" target="_blank">' + network.label + '</a>');
+					print('</li>');
+				}
+			}) %>
+
+		</ul>
+
+	</div>
+</div>
+
+<div class="row">
+
+	<div class="col-sm-12">
+		<h1>Representation</h1>
+
+        <div class="row">
+
+    		<% _(representation).each(function(representer) { %>
+            <div class="col-sm-1 col-md-6">
+
+                <div class="profile-rep-box">
+        			<h2><%= _.escape(representer.type) %></h2>
+        			<% if(representer.name) { %>
+        				<strong>Name:</strong> <%= _.escape(representer.name) %><br />
+        			<% } %>
+
+        			<% if(representer.email) { %>
+        				<strong>Email:</strong> <%= _.escape(representer.email) %><br />
+        			<% } %>
+
+        			<% if(representer.phone1 || representer.phone2) { %>
+        				<strong>Phone:</strong>
+        				<% if(representer.phone1) { %>
+        					[<%= _.escape(representer.phone1) %>]
+        				<% } %>
+        				<% if(representer.phone2) { %>
+        					[<%= _.escape(representer.phone2) %>]
+        				<% } %>
+        				<br />
+        			<% } %>
+
+        			<% if(representer.address1 || representer.address2 || representer.address3 || representer.city || representer.state || representer.zip) { %>
+        				<br><strong>Address:</strong><br />
+        				<% if(representer.address1) { %>
+        					<%= _.escape(representer.address1) %><br />
+        				<% } %>
+        				<% if(representer.address2) { %>
+        					<%= _.escape(representer.address2) %><br />
+        				<% } %>
+        				<% if(representer.address3) { %>
+        					<%= _.escape(representer.address3) %><br />
+        				<% } %>
+        				<% if(representer.city) { %>
+        					<%= _.escape(representer.city) %><br />
+        				<% } %>
+        				<% if(representer.state) { %>
+        					<%= _.escape(representer.state) %><br />
+        				<% } %>
+        				<% if(representer.zip) { %>
+        					<%= _.escape(representer.zip) %><br />
+        				<% } %>
+        				<% if(representer.country) { %>
+        					<%= _.escape(representer.country) %><br />
+        				<% } %>
+        			<% } %>
+        		</div>
+
+            </div>
+    		<% }); %>
+        </div>
+	</div>
+</div>

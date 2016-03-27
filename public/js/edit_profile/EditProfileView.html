@@ -1,0 +1,274 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12"></div>
+        <div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h1>Edit Profile</h1>
+					<p>Edit your profile here. The more information you provide, the easier it will be for you to find opportunities that are of interest for you.</p>
+					<br>
+					<ul class="nav nav-tabs nav-justified">
+						<li class="active"><a href="#bcard" data-toggle="tab">Business Card</a></li>
+                        <li><a href="#bio" data-toggle="tab">Bio/Resume</a></li>
+						<li><a href="#occupation_tab" data-toggle="tab">Occupation</a></li>
+						<li><a href="#skills" data-toggle="tab">Skills</a></li>
+						<li><a href="#appearance" data-toggle="tab">Appearance</a></li>
+						<li><a href="#representation" data-toggle="tab">Representation</a></li>
+						<li><a href="#social" data-toggle="tab">Social</a></li>
+					</ul>
+
+					<div class="tab-content">
+						<div class="tab-pane active" id="bcard">
+
+							<div class="row">
+
+								<div class="col-md-3">
+
+									<form class="form-horizontal" role="form">
+
+										<div class="form-group">
+											<label for="firstName" class="col-sm-5 control-label">First Name</label>
+											<div class="col-sm-7">
+												<input type="text" class="form-control" id="firstName" name="firstName" placeholder="Joe" value="<%= firstName === null ? "" : firstName %>">
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="lastName" class="col-sm-5 control-label">Last Name</label>
+											<div class="col-sm-7">
+												<input type="text" class="form-control" id="lastName" name="lastName" placeholder="Bloggs" value="<%= lastName === null ? "" : lastName %>">
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="city" class="col-sm-5 control-label">City</label>
+											<div class="col-sm-7">
+												<input type="text" id="city" name="city" class="form-control" value="<%= city === null ? "" : city %>">
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-sm-5 control-label" for="country">Country</label>
+											<div class="col-sm-7">
+												<select id="country" name="country" class="form-control">
+                          <option value="">Not selected</option>
+													<% _(countries).each(function(c) { %>
+														<option <% if(c.text.toLowerCase() == country.toLowerCase()){ print ("selected=selected"); } %> value="<%= c.text %>"><%= c.text %></option>
+													<% }); %>
+												</select>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<div class="col-sm-offset-5 col-sm-7">
+												<div class="checkbox">
+													<label>
+														<input type="checkbox" id="privateProfile" name="privateProfile" <%= privateProfile ? " checked " : "" %> />
+														Keep my profile private
+													</label>
+												</div>
+											</div>
+										</div>
+
+									</form>
+
+								</div>
+
+								<div class="col-md-4">
+
+									<div class="form-horizontal" role="form">
+
+										<div class="form-group">
+											<label class="col-sm-4 control-label" for="occupation">Occupation</label>
+											<div class="col-sm-8">
+												<input type="text" id="occupation" name="career.occupation" class="form-control" value="<%= career.occupation === null ? "" : career.occupation %>" />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-sm-4 control-label" for="awards">Awards</label>
+											<div class="col-sm-8">
+												<input type="text" id="awards" name="career.awards" class="form-control" value="<%= career.awards === null ? "" : career.awards %>" />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-sm-4 control-label" for="phone">Phone Number</label>
+											<div class="col-sm-8">
+												<input type="text" id="phone" name="phone" class="form-control" value="<%= phone === null ? "" : phone %>" placeholder="+1 349 280 7583" />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-sm-4 control-label" for="skype">Skype</label>
+											<div class="col-sm-8">
+												<input type="text" id="skype" name="social.skype" class="form-control" value="<%= social.skype === null ? "" : social.skype %>" />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-sm-4 control-label" for="emails">Emails</label>
+											<div class="col-sm-8">
+												<input type="hidden" id="emails" name="emails" class="form-control" data-type="multi" value="<%  print(emails.join(",")); %>" />
+											</div>
+										</div>
+
+									</div>
+
+								</div>
+
+								<div class="col-md-5 alpha">
+									<div class="bcard-container"></div>
+									<br>
+                                    <button type="button" class="btn btn-default btn-small choose-image pull-right">Select image</button>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="tab-pane" id="bio">
+							<div class="form-horizontal" role="form">
+								<div class="form-group">
+									<label class="col-sm-1 control-label" for="summary">Summary</label>
+									<div class="col-sm-11">
+										<textarea id="summary" name="summary" class="form-control" style="min-height: 100px"><%= summary === null ? "" : summary %></textarea>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-1 control-label" for="bio">Bio</label>
+									<div class="col-sm-11">
+										<textarea id="bio" name="bio" class="form-control" style="min-height: 400px"><%= bio === null ? "" : bio %></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+                        <div class="tab-pane" id="occupation_tab">
+                            <div class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="occupations">Occupation</label>
+                                    <div class="col-sm-10">
+                                        <input type="hidden" id="occupations" name="skills.occupations" class="form-control" data-type="multi" value="<% if(skills.occupations){ print(skills.occupations.join(",")); } %>" />
+                                    </div>
+                                </div>
+                                <br><br>
+                                <div class="alert alert-info">Please enter any other keywords in the box below relating to your occupation, qualifications, roles or skills which will help other members find you.</div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="keywords">Other keywords</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="hidden" id="keywords" name="skills.keywords" class="form-control" data-type="multi" value="<% if(skills.keywords){ print(skills.keywords.join(",")); } %>" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+						<div class="tab-pane" id="skills">
+							<div class="form-horizontal" role="form">
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="langs">Languages</label>
+									<div class="col-sm-10">
+										<input type="hidden" id="langs" name="skills.languages" class="form-control" data-type="multi" value="<% if(skills.languages){ print(skills.languages.join(",")); } %>" />
+									</div>
+								</div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="accents">Accents</label>
+                                    <div class="col-sm-10">
+                                        <input type="hidden" id="accents" name="skills.accents" class="form-control" data-type="multi" value="<% if(skills.accents){ print(skills.accents.join(",")); } %>" />
+                                    </div>
+                                </div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="performanceSkills">Performance Skills</label>
+									<div class="col-sm-10">
+										<input type="hidden" id="performanceSkills" name="skills.performance" class="form-control" data-type="multi" value="<% if(skills.performance){ print(skills.performance.join(",")); } %>" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="athleticSkills">Athletic Skills</label>
+									<div class="col-sm-10">
+										<input type="hidden" id="athleticSkills" name="skills.athletic" class="form-control" data-type="multi" value="<% if(skills.athletic){ print(skills.athletic.join(",")); } %>" />
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="tab-pane" id="appearance">
+							<div class="form-horizontal" role="form">
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="height">Height</label>
+									<div class="col-sm-10">
+										<input type="text" id="height" name="appearance.height" class="form-control" value="<%= appearance.height === null ? "" : appearance.height %>" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="weight">Weight</label>
+									<div class="col-sm-10">
+										<input type="text" id="weight" name="appearance.weight" class="form-control" value="<%= appearance.weight === null ? "" : appearance.weight %>" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="hair">Hair</label>
+									<div class="col-sm-10">
+										<input type="text" id="hair" name="appearance.hair" class="form-control" value="<%= appearance.hair === null ? "" : appearance.hair %>" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="hairLength">Hair Length</label>
+									<div class="col-sm-10">
+										<input type="text" id="hairLength" name="appearance.hairLength" class="form-control" value="<%= appearance.hairLength === null ? "" : appearance.hairLength %>"
+										/>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="eyes">Eyes</label>
+									<div class="col-sm-10">
+										<input type="text" id="eyes" name="appearance.eyes" class="form-control" value="<%= appearance.eyes === null ? "" : appearance.eyes %>" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="representation">
+
+                            <section id="representationAddButton" class="clearfix">
+								<button class="btn pull-right" id="btn-representation-add-form">Add Representation</button>
+                                <br><br>
+							</section>
+
+                            <section id="representationList">
+                            </section>
+
+                            <section id="representationForm">
+                            </section>
+
+						</div>
+						<div class="tab-pane" id="social">
+							<div class="alert alert-info">Please enter the full URL (web address) of your profile page on each of the following sites.</div>
+							<div class="form-horizontal" role="form">
+								<% _.each(networks, function(network) { %>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="social_<%= network.name %>"><%= network.label %></label>
+									<div class="col-sm-10">
+										<input
+											type="url"
+											id="social_<%= network.name %>"
+											name="social.<%= network.name %>"
+											class="form-control"
+											value="<%= social[network.name] === null ? "" : social[network.name] %>"
+											placeholder="http://" />
+									</div>
+								</div>
+								<% }) %>
+							</div>
+						</div>
+                    </div>
+				</div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-primary btn-small save">Save</button>
+                    <button type="button" class="btn btn-primary btn-small exit">Close</button>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>

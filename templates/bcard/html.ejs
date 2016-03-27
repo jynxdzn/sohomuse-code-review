@@ -1,0 +1,24 @@
+<div class="body">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Great meeting you!</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <img class="bcard" src="<%= baseUrl %>/bcard-img/<%= _id %>/<%= contact._id %>" width="100%" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Here is my digital business card.  You may click on the link below to view my profile on SohoMuse.  If you would like to add my information to your address book, just click on the attached Vcard. I look forward to collaborating with you soon!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <a class="btn btn-primary btn-block" href="<%= baseUrl %>/bcard/<%= contact.owner %>/<%= contact.bcard.code %>">View Profile</a>
+            </div>
+        </div>
+    </div>
+</div>

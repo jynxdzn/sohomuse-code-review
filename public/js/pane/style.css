@@ -1,0 +1,113 @@
+
+.pane-wrapper.has-frost .pane-content {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+body {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.pane-meta {
+    padding: 15px;
+    z-index: 5;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+@media (min-width: 768px) {
+
+    .pane-wrapper {
+        height: 100%;
+        padding-right: 357px;
+    }
+
+    .pane-meta {
+        right: 357px;
+        margin-right: -357px;
+        width: 357px;
+        position: fixed;
+        top: 50px;
+        padding: 30px 15px 15px 15px;
+        bottom: 0;
+        z-index: 5;
+        /*background-color: rgba(245, 244, 236, 0.73);*/
+        background-color: rgba(255, 255, 255, 0.85);
+        overflow-y: scroll;
+    }
+
+    .pane-content {
+        height: 100%;
+        margin: 0;
+        padding: 30px 15px 15px 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+}
+
+@media (min-width: 992px) {
+
+    .pane-wrapper {
+        height: 100%;
+        padding-right: 357px;
+    }
+
+    .pane-meta {
+        right: 357px;
+        margin-right: -357px;
+        width: 357px;
+        position: fixed;
+        top: 50px;
+        padding: 30px 15px 15px 15px;
+        bottom: 0;
+        z-index: 5;
+        /*background-color: rgba(245, 244, 236, 0.73);*/
+        background-color: rgba(255, 255, 255, 0.85);
+        overflow-y: scroll;
+    }
+
+    .pane-content {
+        height: 100%;
+        margin: 0;
+        padding: 30px 15px 15px 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    .pane-wrapper {
+        height: 100%;
+        padding-right: 477px;
+    }
+
+    .pane-meta {
+        right: 477px;
+        margin-right: -477px;
+        width: 477px;
+        position: fixed;
+        top: 50px;
+        padding: 30px 15px 15px 15px;
+        bottom: 0;
+        z-index: 5;
+        /*background-color: rgba(245, 244, 236, 0.73);*/
+        background-color: rgba(255, 255, 255, 0.85);
+        overflow-y: scroll;
+    }
+
+    .pane-content {
+        height: 100%;
+        margin: 0;
+        padding: 30px 15px 15px 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+}

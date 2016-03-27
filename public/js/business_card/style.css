@@ -1,0 +1,100 @@
+.bcard {
+    background-image: url(/img/blank-card.png);
+    display: block;
+    width: 100%;
+    max-width: 447px;
+    position: relative;
+    background-size: cover;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px 13px 13px 10px;
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bcard a {
+    color: #fff;
+}
+
+.bcard a:hover {
+    text-decoration: none;
+}
+
+.bcard > img {
+    width: 100%;
+}
+
+.bcard .bcard_txt {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 52%;
+    margin-left: 6%;
+}
+
+.bcard .bcard_info {
+    height: 40%;
+    overflow: hidden;
+}
+
+.bcard .bcard_rep {
+    padding: 0 0 0 25px;
+}
+
+.bcard .bcard_rep .glyphicon {
+    font-size: 100%;
+}
+
+.bcard span {
+    display: block;
+    color: #ddd;
+}
+
+.bcard .name {
+    margin-top: 8%;
+    text-transform: uppercase;
+    font-size: 140%;
+}
+
+.bcard_overlay {
+    position: absolute;
+    top: 0;
+    left: 3px;
+    height: 221px;
+    width: 448px;
+    background-repeat: no-repeat;
+    background-image: url('/img/blank-card-shine.png');
+}
+
+.bcard_img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 41.83445%;
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.bcard_img div {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.bcard_img, .bcard_img div, .bcard_img img {
+    -moz-border-radius: 0 10px 10px 0;
+    -webkit-border-radius: 0 10px 10px 0;
+    -khtml-border-radius: 0 10px 10px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+@media (max-width: 400px) {
+    .bcard .bcard_txt {
+        font-size: 70%;
+    }
+}

@@ -1,0 +1,6 @@
+<a href="#user/<%= encodeURIComponent(actor.username) %>/media">
+	<% _.each(data.file_ids, function(file_id, i) { %>
+		<img id="preview" src="/api/v1/files/<%= encodeURIComponent(file_id) %>/thumb?width=150" class="img-thumbnail">
+	<% }); %>
+	<div style="clear: both"></div>
+</a>

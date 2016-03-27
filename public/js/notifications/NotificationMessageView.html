@@ -1,0 +1,31 @@
+<% if(messageId) { %>
+<div class="media">
+
+    <div class="pull-left">
+        <img class="media-object contact-avatar" src="/api/v1/users/username/<%= owner.username %>/avatar?width=45&amp;height=45" width="45" height="45">
+    </div>
+
+    <div class="media-body">
+        <h5 class="media-heading">
+            <%
+            if (typeof owner != "undefined" && owner != null) {
+                print (owner.firstName + " " + owner.lastName);
+            } else {
+                if (typeof messageId.emailFrom != 'undefined') {
+                    print (messageId.emailFrom);
+                }
+            }
+            %>
+            <span class="notify-when"><% print (moment(added).fromNow()); %></span>
+        </h5>
+        <div class="media-content">
+            <% if(messageId.subject){print (messageId.subject + " - ") ;} %>"<%= shortBody %>"
+        </div>
+        <div class="media-footer">
+            <a href="#messages/<% if(messageId.parentId){print (messageId.parentId);}else{print (messageId._id);} %>" class="notify-action open">open</a> or
+            <a href="#messages" class="notify-action markRead">remove</a>
+        </div>
+    </div>
+
+</div>
+<% } %>

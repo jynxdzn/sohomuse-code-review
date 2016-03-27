@@ -1,0 +1,71 @@
+<div class="profile-inner">
+    <div class="profile-container">
+        <div class="row hero">
+            <div class="col-sm-6 col-md-7 col-lg-8 hidden-xs">
+            </div>
+            <div class="col-sm-6 col-md-5 col-lg-4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 alpha-sm bcard-container">
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px">
+                    <div class="showcase col-md-7 alpha-sm" style="padding-right: 10px"></div>
+                    <div class="actions col-md-5 alpha-sm">
+                        <ul class="bs-glyphicons list-group">
+                            <% if (window.this_user) { %>
+                                <% if (username != window.this_user.username) { %>
+
+                                    <% if (typeof contact.connection_date == 'string') { %>
+                                        <li class="list-group-item">
+                                            <span class="glyphicon glyphicon-ok"></span>
+                                            <span>Connected</span>
+                                        </li>
+                                    <% } else if (typeof contact.invite == 'string') { %>
+                                        <li class="list-group-item">
+                                            <span class="glyphicon glyphicon-plus"></span>
+                                            <span>Invite sent</span>
+                                        </li>
+                                    <% } else { %>
+                                        <li class="list-group-item">
+                                            <a class="btn-connect">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                                <span>Connect</span>
+                                            </a>
+                                        </li>
+                                    <% } %>
+                                <% } %>
+                            <% } %>
+
+                            <li class="list-group-item">
+                                <a class="btn-connections">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                    <span><%= counts.connections %> connections</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item"><span class="glyphicon glyphicon-calendar"></span> <span>Calendar</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+<!--         <div class="row btn-container">
+            <button class="btn btn-primary saveWidgets">Save</button>
+            <a class="btn btn-default" href="#">Cancel</a>
+            <span>Drag and drop the widgets below, to customize the layout of your profile</span>
+        </div>
+        <div class="row widget-container">
+
+            <div class="col-sm-4 widget col1"></div>
+            <div class="col-sm-4 widget col2"></div>
+            <div class="col-sm-4 widget col3"></div>
+        </div>
+ -->
+        <div class="row gallery-container">
+            <div class="col-sm-12 alpha omega">
+                <div class="gallery">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

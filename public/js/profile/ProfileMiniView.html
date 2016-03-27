@@ -1,0 +1,160 @@
+<!-- Hidden things/popups -->
+
+<div class="hidden endorse-popover not-endorsed">
+    <div class="form-group">
+        <label for="endorse_notes">Notes</label>
+        <textarea name="endorse_notes" class="form-control" placeholder="Additional details about this endorsement"></textarea>
+    </div>
+    <button type="submit" class="btn btn-default btn-endorse-action">Endorse</button>
+</div>
+
+<div class="hidden endorse-popover is-endorsed">
+    <p class="bg-info" style="padding: 10px"><%= endorsement_notes %></p>
+    <button type="submit" class="btn btn-default btn-endorse-action">Remove endorsement</button>
+</div>
+
+<div class="hidden bookmark-popover not-bookmarked">
+    <div class="form-group">
+        <label for="bookmark_notes">Notes</label>
+        <textarea name="bookmark_notes" class="form-control" placeholder="Additional details about this bookmark"></textarea>
+    </div>
+    <button type="submit" class="btn btn-default btn-bookmark-action">Bookmark</button>
+</div>
+
+<div class="hidden bookmark-popover is-bookmarked">
+    <p class="bg-info" style="padding: 10px"><%= bookmark_notes %></p>
+    <button type="submit" class="btn btn-default btn-bookmark-action">Remove bookmark</button>
+</div>
+
+
+<!-- Navigation -->
+
+<div class="profile-nav" style="display:none">
+    <ul>
+        <li>
+            <a class="profile-area" href="#user/<%= encodeURIComponent(username) %>">
+                <img src="/img/ico/person.png">
+                <span class="profile-link-text">Profile</span>
+            </a>
+        </li>
+        <li>
+            <a class="profile-area" href="#user/<%= encodeURIComponent(username) %>/about">
+                <img src="/img/ico/about.png">
+                <span class="profile-link-text">About</span>
+            </a>
+        </li>
+        <li>
+            <a class="profile-area" href="#user/<%= encodeURIComponent(username) %>/media">
+                <img src="/img/ico/media.png">
+                <span class="profile-link-text">Media</span>
+            </a>
+        </li>
+        <li>
+            <a class="profile-area" href="#user/<%= encodeURIComponent(username) %>/projects">
+                <img src="/img/ico/projects.png">
+                <span class="profile-link-text">Projects</span>
+            </a>
+        </li>
+        <li>
+            <a class="profile-area" href="#user/<%= encodeURIComponent(username) %>/contacts">
+                <img src="/img/ico/contact.png" width="32" height="32">
+                <span class="profile-link-text">Contact</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<!-- Main stuff -->
+
+<% if (mode == 'search') { %>
+<a class="view-full-profile" data-type="mutual" href="#user/<%= encodeURIComponent(username) %>">View <%= firstName %>&rsquo;s profile</a>
+<% } %>
+
+<div class="bcard-container"></div>
+
+<div class="profile-actions">
+    <% if (window.this_user.id != _id) { %>
+    <a class="profile-action btn-connect <%= (contact && contact.owner && contact.owner == window.this_user.id ? 'active' : '') %>" data-overlay="false">
+        <img src="/img/ico/connect-both.png">
+        <span class="profile-link-text">Connect</span>
+    </a>
+    <a class="profile-action btn-message" data-overlay="true">
+        <img src="/img/ico/message.png">
+        <span class="profile-link-text">Message</span>
+    </a>
+    <a class="profile-action btn-endorse" data-overlay="true">
+        <img src="/img/ico/endorse.png">
+        <span class="profile-link-text">Endorse</span>
+    </a>
+    <a class="profile-action btn-bookmark" data-overlay="true">
+        <img src="/img/ico/bookmark.png">
+        <span class="profile-link-text">Bookmark</span>
+    </a>
+    <a class="profile-action btn-share" data-overlay="true">
+        <img src="/img/ico/share.png">
+        <span class="profile-link-text">Share</span>
+    </a>
+    <% } %>
+</div>
+
+<% if (locationName || available) { %>
+
+<ul class="profile-meta">
+
+    <% if (locationName) { %>
+    <li class="meta-location"><img src="/img/ico/location.png"><%= _.escape(firstName) %> is currently in <strong><%= _.escape(locationName) %></strong></li>
+    <% }  %>
+
+    <% if (available === true) { %>
+    <li class="meta-available"><img src="/img/ico/tick.png"> and is currently <strong>available for hire</strong> right now.</li>
+    <% } else { %>
+    <li class="meta-unavailable"><img src="/img/ico/cross.png">and is currently <strong>unavailable for hire</strong> right now.</li>
+    <% } %>
+
+</ul>
+
+<% } %>
+
+<% if (status && status.data && status.data.text) { %>
+
+<% liked = (this_user && _.find(status.likes, function(like) { return like.actor._id == this_user.id; }) ? true : false) %>
+
+<div class="profile-status newsitem <%= (liked ? 'is-liked' : 'is-unliked') %>" data-id="<%= _.escape(status._id) %>" data-liked="<%= liked %>">
+    <h6 class="activity-time"><strong>Latest activity</strong> Posted on <%= moment(_.escape(status.time)).format("Do MMMM YYYY") %></h6>
+    <p class="activity-text"><%= _.escape(status.data.text) %></p>
+    <a class="likeToggle newsLikeToggle"
+        data-count="<%= _.size(status.likes) %>"
+        data-status="<%= (liked ? 'on' : 'off') %>"
+        href="#">
+    </a>
+</div>
+
+<% } else if (added) { %>
+
+<div class="profile-status">
+    <%= (window.this_user.id == _id ? 'You' : firstName) %> joined SohoMuse in <%= moment(_.escape(added)).format("MMMM YYYY") %>.
+</div>
+
+<% } %>
+
+<ul class="nav nav-tabs tabs-profile">
+    <li><a href="#showreel-tab" data-toggle="tab"><img src="/img/ico/showreel.png"> Showreel</a></li>
+    <li><a href="#availability-tab" data-toggle="tab"><img src="/img/ico/calendar.png"> Availability</a></li>
+    <li><a href="#connections-tab" data-toggle="tab"><img src="/img/ico/connect-both.png"> Connections</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+    <div class="tab-pane pane-showcase" id="showreel-tab">
+        <button type="button" class="showcase-btn-prev" data-direction="prev"></button>
+        <button type="button" class="showcase-btn-next" data-direction="next"></button>
+    	<div class="showcase"></div>
+    </div>
+    <div class="tab-pane" id="availability-tab"><div class="availability-container"></div></div>
+    <div class="tab-pane" id="connections-tab"><div class="connections-container"></div></div>
+</div>
+
+<% if (summary) { %>
+<div class="profile-summary-box" style="display: none"><span class="profile-summary-box-text"><%= _.escape(summary) %></span></div>
+<% } %>

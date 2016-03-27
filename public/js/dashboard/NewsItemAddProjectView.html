@@ -1,0 +1,13 @@
+<strong><a href="#user/<%= encodeURIComponent(actor.username) %>/projects/<%= encodeURIComponent(data.project_id) %>"><%= data.title %></a></strong>
+
+<% if (data.summary) { %>
+<p class="news-project-summary"><%= data.summary %></p>
+<% } %>
+
+<% if (data.requiredRoles && data.requiredRoles.length > 1) { %>
+<p><strong>Seeking collaborators for the following roles: </strong> <%= data.requiredRoles.join(', ') %></p>
+<% } %>
+
+<% if (data.requiredRoles && data.requiredRoles.length === 1) { %>
+<p><strong>Seeking collaborators for the following role: </strong> <%= data.requiredRoles.join(', ') %></p>
+<% } %>

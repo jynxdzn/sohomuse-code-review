@@ -1,0 +1,75 @@
+<div class="wrapper files-nav">
+    <div class="container">
+        <div class="col-md-12">
+            <ul class="nav nav-tabs pull-left">
+                <li<% if (type == 'my_files') { %> class="active"<% } %>><a href="#files" class="files">My Files</a></li>
+                <li<% if (type == 'gallery') { %> class="active"<% } %>><a href="#gallery" class="gallery">Gallery</a></li>
+                <li<% if (type == 'shared_files') { %> class="active"<% } %>><a href="#shared_files" class="shared_files">Files shared with me</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="wrapper connections-search">
+    <div class="container">
+        <div class="col-sm-3 col-sm-offset-9">
+            <form class="form-search" role="search">
+                <div class="input-group">
+                    <input type="text" id="q" class="form-control" placeholder="Search your files" value="">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="col-md-8">
+        <div class="tab-content">
+            <div class="tab-pane active" id="files">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p class="lead">Upload a file</p>
+                <div class="checkbox">
+                    <label>
+                        <input class="postnews-file" name="postNews" type="checkbox"> Post to news feed
+                    </label>
+                </div>
+                <div id="fileupload"></div>
+                <div class="alert alert-info">
+                    <p>You can upload ANY type of file here including multimedia formats such as MP3, JPEG, PNG, ZIP and PDF. Max. file size: 20MB</p>
+                    <!-- <p>Maximum file upload size: 20MB</p>
+                    <p>Files of all types can be uploaded - multimedia formats supported are mp3, jpeg, gif and png.</p>
+                    <p>Other formats such as zip and PDF are also supported.</p>
+                    <p>MP3 files are usually about 5MB in size; and images (JPG, JPEG, GIF, PNG) range from 0.5 to 3MB in size.</p> -->
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p class="lead">Add a video</p>
+                <div class="checkbox">
+                    <label>
+                        <input class="postnews-video" name="postNews" type="checkbox"> Post to news feed
+                    </label>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control url" placeholder="YouTube or Vimeo URL">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default urlAdd" type="button">Add</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

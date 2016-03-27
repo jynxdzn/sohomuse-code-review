@@ -1,0 +1,10 @@
+<%
+var tooltip = firstName + ' ' + lastName;
+if (notes && notes.length > 0) {
+    tooltip = tooltip + " (" + notes + ")";
+}
+tooltip = _.escape(tooltip);
+%>
+<a href="#user/<%= encodeURIComponent(username) %>" class="bs-tooltip" title="<%= tooltip %>">
+<img class="profile-pic-medium" src="/api/v1/users/username/<%= _.escape(username) %>/avatar?width=45&amp;height=45" />
+</a>

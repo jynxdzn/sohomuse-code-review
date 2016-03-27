@@ -1,0 +1,28 @@
+<div class="body">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="subject">Password Reset</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12 content">
+				<p>A password reset has been requested for your account. Please click to update your password:</p>
+				
+				<p><a class="btn btn-primary" href="<%= baseUrl %>/reset/<%= user.id %>/<%= user.passwordResetCode %>">Reset Password</a></p>
+
+				<p>This password reset request will expire shortly.</p>
+
+				<p>If you have not requested a password reset, please ignore this email.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<p class="footer">
+					&copy; Copyright SohoMuse INC
+				</p>
+			</div>
+		</div>
+	</div>
+	<img src="<%= baseUrl %>/img/s-email.png" class="logo-img">
+</div>

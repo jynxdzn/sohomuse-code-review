@@ -1,0 +1,150 @@
+/*.search-container {
+    height: 100%;
+}*/
+
+.search-results {
+    /*background: rgba(255, 255, 255, 0.85);
+    padding: 15px;
+    height: 100%;*/
+    padding: 15px;
+}
+
+.search-container,
+.search-results {
+    /*height: 100%;*/
+}
+
+.search-header {
+    margin-bottom: 25px;
+}
+
+    .search-header h1 {
+        margin: 0;
+        text-transform: none;
+        color: #666;
+    }
+
+
+.form-search-sort.form-horizontal .control-label {
+    text-align: right;
+}
+
+.filter-container {
+    height: 96%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.filter-caption {
+    font-size: 15px;
+    font-weight: bold;
+    color: #3d3c3c;
+    display: block;
+    cursor: pointer;
+    margin: 10px 0;
+    padding-right: 10px;
+}
+
+    .filter-caption .glyphicon {
+        font-size: inherit;
+        color: #999;
+        font-size: 80%;
+    }
+
+    .filter-caption .glyphicon.is-open {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    }
+
+.results-container {
+    /*padding-right: 15px;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;*/
+}
+
+    .result-user {
+		margin-bottom: 15px;
+		/*min-height: 230px;
+        min-height: 600px;*/
+        height: 250px;
+	}
+
+		.result-user a {
+			color: inherit;
+		}
+
+		.result-user .user-avatar {
+			display: block;
+			margin: 0 0 10px 0;
+		}
+
+        .result-user .user-avatar img {
+            width: 200px;
+            height: auto;
+        }
+
+		.result-user .user-name {
+			color: #212121;
+			display: block;
+			margin: 0 0 5px 0;
+			padding: 0;
+			line-height: 1;
+		}
+
+		.result-user .user-location {
+			color: #666666;
+			display: block;
+			margin: 0 0 5px 0;
+			padding: 0;
+			line-height: 1;
+		}
+
+
+
+.search-results-column {
+    /*height: 88%;*/
+}
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+
+    .search-results {
+        margin-left: 15px;
+        padding: 0;
+        height: 100%;
+    }
+
+    .result-user {
+        height: 260px;
+    }
+
+}
+
+
+
+@media (min-width: 992px) {
+
+    .result-user {
+        height: 230px;
+    }
+
+}
+
+
+
+@media (min-width: 1200px) {
+
+    .result-user {
+        height: 260px;
+    }
+
+}

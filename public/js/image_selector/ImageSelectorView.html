@@ -1,0 +1,62 @@
+<div class="row" style="margin-bottom: 25px">
+	<div class="col-sm-8">
+        <h1 style="margin-top: 0">Update profile image</h1>
+	</div>
+	<div class="col-sm-4">
+		<p class="text-right">
+			<button class="btn btn-primary btn-small cancel">Cancel</button>
+		</p>
+	</div>
+</div>
+
+<div class="row" style="margin-bottom: 25px">
+	<div class="col-sm-12">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="col-sm-12">
+					<p class="lead">Upload a file</p>
+				</div>
+				<div class="col-sm-12">
+					<input type="file" data-url="" name="uploadFile" class="fileupload" style="display: inline-block">
+					<img src="/img/ajax-loader.gif" alt="Uploading" class="loading-bar">
+				</div>
+				<div class="col-sm-12">
+					<div id="fileupload"></div>
+					<div class="alert alert-info">
+						<p>Maximum file upload size: 20MB</p>
+						<p>Image formats supported are jpeg, gif and png.</p>
+						<p>Images (JPG, JPEG, GIF, PNG) typically range from 0.5 to 3MB in size.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="col-sm-8">
+					<p class="lead">Choose from your images</p>
+				</div>
+				<div class="col-sm-4">
+					<p class="text-right">
+						<button class="btn btn-primary btn-small save">Save</button>
+					</p>
+				</div>
+				<div class="col-sm-12" style="margin-bottom: 25px">
+					<form class="form-search" id="form-search-files" role="search">
+						<div class="input-group">
+							<input type="text" id="q" class="form-control" placeholder="Search your files" value="">
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="submit">
+									<span class="glyphicon glyphicon-search"></span>
+								</button>
+							</span>
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-12">
+					<div class="thumbs"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

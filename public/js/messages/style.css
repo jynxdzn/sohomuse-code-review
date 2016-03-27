@@ -1,0 +1,24 @@
+.messageview .panel-body{
+	cursor:pointer;
+}
+.img_40{
+	width:40px;
+}
+.img_15{
+	width:15px;
+	float:left;
+	margin-right:8px;
+}
+.img_25{
+	height:54px;
+	float:left;
+	margin-right:8px;
+}
+
+.messageDetails.no-reply .panel-reply {
+	display: none;
+}
+
+.messageReplies {
+    margin-bottom: 20px;
+}

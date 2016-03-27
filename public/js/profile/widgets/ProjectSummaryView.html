@@ -1,0 +1,36 @@
+<div class="row project-info">
+	<div class="col-md-6">
+		<img src="/api/v1/projects/<%= _id %>/thumbnail?height=400&amp;width=556" class="img-responsive" />
+	</div>
+	<div class="col-md-6">
+		<div class="project-summary-wrapper">
+
+			<div class="project-labels">
+				<% if (isLive) { %><span class="label label-primary label-project-active">Active</span><% } %>
+				<% if (isComplete) { %><span class="label label-primary label-project-complete">Complete</span><% } %>
+			</div>
+
+			<h2 class="project-title"><%= title %></h2>
+			<div class="project-background"><%= background %></div>
+			<a href="#user/<%= encodeURIComponent(owner.username) %>/projects/<%= _id %>" class="btn btn-primary btn-xs view-project">MORE</a>
+			<div class="project-collaborators">
+				<% if (collaborators.length > 0) { %>
+					<h4 class="project-collaborators-title">Collaborators:</h4>
+                    <div class="clearfix">
+					<% _.each(collaborators, function(c) { %>
+                        <% if (c.target_username) { %>
+                        <a title="<%= c.firstName %> <%= c.lastName %>" class="bs-tooltip project-collaborator" href="#user/<%= encodeURIComponent(c.target_username) %>"><img src="/api/v1/users/username/<%= c.target_username %>/avatar?width=35&amp;height=35" width="35" height="35"></a>
+                        <% } else { %>
+						<a class="bs-tooltip project-collaborator" title="<%= c.firstName %> <%= c.lastName %>"><img src="/img/card-default-square.png" width="35" height="35"></a>
+                        <% } %>
+					<% }); %>
+                    </div>
+				<% } else if (requiredRoles.length > 0) { %>
+					<span class="project-collaborators-seeking">This project is seeking collaborators for the following roles:<br>
+					<%= requiredRoles %>
+					</span>
+				<% } %>
+			</div>
+		</div>
+	</div>
+</div>

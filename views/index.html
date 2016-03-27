@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>SohoMuse</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="/img/favicon/favicon-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="/img/favicon/favicon-160x160.png" sizes="160x160">
+        <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/img/favicon/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="/img/favicon/favicon-32x32.png" sizes="32x32">
+        <meta name="msapplication-TileColor" content="#999999">
+        <meta name="msapplication-TileImage" content="/img/favicon/mstile-144x144.png">
+        <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+        <% if (bundledAssets) { %>
+            <link rel="stylesheet" type="text/css" href="main-built.css">
+        <% } else { %>
+            <link rel="stylesheet" type="text/css" href="main.css">
+        <% } %>
+          
+        <script type="text/javascript" src="https://s3.amazonaws.com/assets.freshdesk.com/widget/freshwidget.js"></script>
+        <script type="text/javascript">
+	        FreshWidget.init("", {
+            "queryString": "&widgetType=popup", 
+            "widgetType": "popup", 
+            "buttonType": "text", 
+            "buttonText": "Support", 
+            "buttonColor": "#FFFFFF", 
+            "buttonBg": "#000000", 
+            "alignment": "2", 
+            "offset": "235px", 
+            "formHeight": "500px", 
+            "url": "https://sohomuse.freshdesk.com"
+          });
+        </script>
+    </head>
+    <body>
+		<div id="media-width-detection-element"></div>
+        <div id="overlay"></div>
+        <div id="fullpage" class="container-fluid no-col-padding">
+            <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+                <div class="navbar-header">
+                    <a href="#dashboard" id="logo"><img src="img/logo.png" height="50" alt="SohoMuse" /></a>
+                    <button type="button" data-toggle="collapse" data-target=".navbar-ex1-collapse" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="home-menu">
+                            <a href="#"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp; Home</a>
+                        </li>
+                        <li class="dashboard-menu">
+                            <a href="#dashboard">Dashboard</a>
+                        </li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" role="button" id="drop2" href="#">My Profile <b class="caret"></b></a>
+                            <ul aria-labelledby="drop2" role="menu" class="dropdown-menu">
+                                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">View My Profile</a></li>
+                                <li role="presentation"><a href="#edit" tabindex="-1" role="menuitem">Edit Profile</a></li>
+                                <li role="presentation"><a href="#image" tabindex="-1" role="menuitem">Update Profile Image</a></li>
+                                <li role="presentation"><a href="#projects" tabindex="-1" role="menuitem">My Projects</a></li>
+                                <li role="presentation"><a href="/logout" tabindex="-1" role="menuitem">Logout</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" role="button" id="drop3" href="#">Connections <b class="caret"></b></a>
+                            <ul aria-labelledby="drop3" role="menu" class="dropdown-menu">
+                                <li role="presentation"><a href="#contacts" tabindex="-1" role="menuitem">My Connections</a></li>
+                                <li role="presentation"><a href="#add" tabindex="-1" role="menuitem">Add contact</a></li>
+                            </ul>
+                        </li>
+                        <li class="files-menu">
+                            <a href="#files">Files</a>
+                        </li>
+                        <li class="messages-menu">
+                            <a href="#messages">Messages</a>
+                        </li>
+                        <li class="add-contact-item">
+                            <a href="#add"><span class="glyphicon glyphicon-plus"></span> Contact</a>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-left frm-search" role="search">
+                        <div class="form-group">
+                            <input type="search" class="form-control" size="21" placeholder="Search SohoMuse&hellip;">
+                            <button type="submit" class="btn btn-default dropdown-toggle">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="notifications-menu" id="notifications">
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div id="page"></div>
+        </div>
+      <script type="text/javascript" src="http://feather.aviary.com/js/feather.js"></script>
+      <script type="text/javascript" src="http://www.youtube.com/iframe_api"></script>
+      <script type="text/javascript" src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+      <script>var this_user = { id: '<%= user._id %>', username: '<%= user.username %>' };</script>
+      <% if (bundledAssets) { %>
+          <script src="main-built.js" data-main="main"></script>
+      <% } else { %>
+          <script src="bower_components/requirejs/require.js" data-main="main"></script>
+      <% } %>
+    </body>
+</html>

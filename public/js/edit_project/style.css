@@ -1,0 +1,17 @@
+.edit_project {
+    margin-top: 15px;
+}
+
+
+.edit_project .form-horizontal .control-label {
+	text-align: left;
+}
+
+
+.media-item {
+	height: 275px;
+}
+
+	.media-item .btn.remove-item {
+		margin-top: 10px;
+	}

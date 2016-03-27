@@ -1,0 +1,94 @@
+<div class="media newsitem <%= (_.find(likes, function(like) { return like.actor._id == this_user.id; }) ? 'is-liked' : '') %>" data-id="<%= _.escape(id) %>">
+    <a class="pull-left" href="#user/<%= encodeURIComponent(actor.username) %>">
+        <img class="media-object profile-pic-medium" src="/api/v1/users/username/<%= _.escape(actor.username) %>/avatar?width=48&amp;height=48" />
+    </a>
+
+    <div class="media-body">
+
+        <header>
+			<% if(actor._id == this_user.id) { %>
+				You <%= actionHtml %>
+			<% } else { %>
+				<a href="#user/<%= encodeURIComponent(actor.username) %>" class="actor_name"><span><%= _.escape(actor.firstName) %></span></a> <%= actionHtml %>
+			<% } %>
+            <span class="time"><%= moment(_.escape(time)).fromNow() %></span>
+        </header>
+
+        <section>
+            <%= newsItemHtml %>
+        </section>
+
+        <section class="news-item-actions">
+            <% if (action == "media") { %>
+            <!-- <button>View all</button> -->
+            <% } %>
+
+            <a class="commentToggle"
+                data-count="<%= _.size(comments) %>"
+                data-status="<%= (_.find(comments, function(comment) { return comment.actor._id == this_user.id; }) ? 'on' : 'off') %>"
+                href="#">
+            </a>
+
+            <a class="likeToggle newsLikeToggle"
+                data-count="<%= _.size(likes) %>"
+                data-status="<%= (_.find(likes, function(like) { return like.actor._id == this_user.id; }) ? 'on' : 'off') %>"
+                href="#">
+            </a>
+        </section>
+
+
+        <section class="news-comments">
+            <% _.each(comments, function(comment){ %>
+
+                <section class="media comment" data-id="<%= _.escape(comment._id) %>">
+
+                    <a class="pull-left" href="#user/<%= encodeURIComponent(comment.actor.username) %>">
+                        <img class="media-object profile-pic-tiny" src="/api/v1/users/username/<%= _.escape(comment.actor.username) %>/avatar?width=20&amp;height=20" />
+                    </a>
+
+                    <div class="media-body">
+
+                       <a href="#user/<%= encodeURIComponent(comment.actor.username) %>" class="actor_name"><%= _.escape(comment.actor.firstName) %></a>:
+                       <%= _.escape(comment.data.text) %><br />
+                       <span class="time"><%= moment(_.escape(comment.time)).fromNow() %></span>
+
+                        <section class="news-item-actions">
+                            <a class="likeToggle commentLikeToggle"
+                                data-count="<%= _.size(comment.likes) %>"
+                                data-status="<%= (_.find(comment.likes, function(like) { return like.actor._id == this_user.id; }) ? 'on' : 'off') %>"
+                                href="#">
+                            </a>
+                        </section>
+
+                        <!-- <span class="pull-right">
+                            <span class="glyphicon glyphicon-heart"><%= _.size(comment.likes) %>
+                        </span>
+
+                        <section class="news-item-actions">
+                            <% if(_.find(comment.likes, function(like) { return like.actor._id == this_user.id; })) { %>
+                                <span class="commentUnlike pull-right">
+                                    <button class="btn btn-simple btn-xs" title="remove appreciation"><span class="glyphicon glyphicon-heart active" alt="remove appreciation"></button>
+                                </span>
+                            <% } else { %>
+                                <span class="commentLike pull-right">
+                                    <button class="btn btn-simple btn-xs" title="add appreciation"><span class="glyphicon glyphicon-heart" alt="add appreciation"></button>
+                                </span>
+                            <% } %>
+                        </section> -->
+
+                    </div>
+                </section>
+
+            <% }); %>
+        </section>
+
+        <section class="comment_submit_widget">
+            <form role="form">
+                <textarea class="form-control my_comment initial_hide" placeholder="Enter your comment..."></textarea>
+                <section class="news-item-actions">
+                    <button class="btn btn-simple btn-primary commentSubmit my_comment_submit initial_hide pull-right">Comment</button>
+                </section>
+            </form>
+        </section>
+    </div>
+</div>

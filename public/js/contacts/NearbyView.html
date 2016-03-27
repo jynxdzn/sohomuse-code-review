@@ -1,0 +1,45 @@
+<div class="row">
+
+    <div class="col-md-1 contact-soho">
+        <img class="contact-soho-img" src="/img/contact-soho.png">
+        <span class="contact-soho-count"><%= counts.connections %></span>
+    </div>
+
+    <div class="col-md-11">
+
+        <div class="panel panel-default panel-gradient">
+            <div class="panel-body">
+                <div class="col-md-4 panel-section">
+                    <div class="media">
+                        <% if (username === null) { %>
+                        <div class="pull-left">
+                            <img class="media-object contact-avatar" src="/img/card-default-square.png" width="50" height="50">
+                        </div>
+                        <% } else { %>
+                        <a class="pull-left" href="#user/<%= encodeURIComponent(username) %>">
+                            <img class="media-object contact-avatar" src="/api/v1/users/username/<%= username %>/avatar?width=50&amp;height=50" width="50" height="50">
+                        </a>
+                        <% } %>
+
+                        <div class="media-body">
+                            <% if (typeof username == 'string') { %>
+                                <h3 class="contact-name"><a href="#user/<%= encodeURIComponent(username) %>"><%= _.escape(firstName) %> <%= _.escape(lastName) %></a></h3>
+                            <% } else { %>
+                                <h3 class="contact-name"><%= _.escape(firstName) %> <%= _.escape(lastName) %></h3>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5 panel-section panel-middle">
+                    <%= notes %>
+                </div>
+                <div class="col-md-3 panel-section">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

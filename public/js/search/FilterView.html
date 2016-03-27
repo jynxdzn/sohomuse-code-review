@@ -1,0 +1,15 @@
+
+<form class="filter-form">
+
+    <% _.each(filter, function(items, caption) { %>
+        <h4 class="filter-caption" data-filter="<%= caption %>"><%= caption %> <span class="glyphicon glyphicon glyphicon-play"></span></h4>
+        <div class="filter-items initial_hide" data-filter="<%= caption %>">
+            <% _.each(items, function(item) { %>
+                <div class="checkbox">
+                    <label> <input class="filter-element" data-caption="<%= caption %>" name="<%= caption %>[]" type="checkbox" value="<%= item %>"> <%= item %> </label>
+                </div>
+            <% }) %>
+        </div>
+    <% }) %>
+
+</form>

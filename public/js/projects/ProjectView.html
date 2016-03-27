@@ -1,0 +1,20 @@
+<div class="panel panel-default panel-gradient">
+
+    <div class="panel-body">
+        <div class="col-md-4">
+            <% if (typeof title == 'string') { %>
+                <h3 class="panel-title"><a href="#projects/<%= encodeURIComponent(_id) %>"><%= _.escape(title) %></a></h3>
+            <% } else { %>
+                <h3 class="panel-title"><a href="#projects/<%= encodeURIComponent(_id) %>">Project #<%= _.escape(_id) %></a></h3>
+            <% } %>
+            <p>Added <% print (moment(added).fromNow()); %></p>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,12 @@
+<a class="user-avatar view-user" href="#user/<%= encodeURIComponent(username) %>">
+	<img class="img-responsive" src="/api/v1/users/username/<%= encodeURIComponent(username) %>/avatar?width=200&amp;height=200">
+</a>
+
+<h5 class="user-name"><a class="view-user" href="#user/<%= encodeURIComponent(username) %>"><%= firstName %> <%= lastName %></a></h5>
+<p class="user-location">
+	<% if (city) { %>
+		<%= city %>,
+	<% } %>
+
+	<% if (country) { print(country); } %>
+</p>

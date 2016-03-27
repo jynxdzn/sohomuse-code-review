@@ -1,0 +1,85 @@
+.fs-overlay .thumbs {
+    margin-top: 98px;
+}
+
+.fs-overlay .thumbs ul {
+    margin: 0;
+    padding: 0;
+}
+
+.fs-overlay .thumbs .img-item {
+    height: 160px;
+    width: 25%;
+    float: left;
+    margin-right: 0;
+    list-style: none;
+    display: list-item;
+    padding: 5px;
+}
+
+.fs-overlay .thumbs .img-name {
+    word-wrap: break-word;
+}
+
+.fs-overlay .thumbs .img-thumbnail {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+
+.fs-overlay .pager-btn-container.btn-container-next {
+    text-align: right;
+}
+
+.fs-overlay .pager-btn-container {
+    position: relative;
+}
+
+.fs-overlay .file-btn-prev,
+.fs-overlay .file-btn-next {
+    width: 42px;
+    height: 78px;
+    display: inline-block;
+    top: 0;
+    border: 0;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 50% 50%;
+    position: absolute;
+}
+
+.fs-overlay .file-btn-prev { left: 20px; background-image: url(/img/zarr-left-lg-white.png); }
+.fs-overlay .file-btn-next { right: 20px; background-image: url(/img/zarr-right-lg-white.png); }
+
+
+
+
+@media (min-width: 768px) {
+
+    .fs-overlay .thumbs {
+        margin-top: 0;
+    }
+
+    .fs-overlay .thumbs .img-item {
+        height: 260px;
+        width: 20%;
+        float: left;
+        margin-right: 0;
+        list-style: none;
+        display: list-item;
+        padding: 10px;
+    }
+
+    .fs-overlay .file-btn-prev,
+    .fs-overlay .file-btn-next {
+        height: 156px;
+    }
+
+    .fs-overlay .file-btn-prev { left: 0; }
+    .fs-overlay .file-btn-next { right: 0; }
+
+}

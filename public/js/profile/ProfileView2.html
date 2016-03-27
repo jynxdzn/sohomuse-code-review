@@ -1,0 +1,162 @@
+<div class="container-fluid profile-container">
+    <div class="row profile-main">
+
+        <div class="col-md-8 profile-body">
+            <div class="row">
+                <div class="col-md-11 col-md-offset-1">
+                    <div class="about-container"></div>
+                    <div class="media-container"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 profile-column">
+            <div class="bcard-container"></div>
+
+            <div class="profile-actions">
+
+                <a class="profile-action btn-connect" data-overlay="false">
+                    <!-- <span class="glyphicon glyphicon-user"></span> -->
+                    <img src="/img/ico/connect-both.png">
+                    <span class="profile-link-text">Connect</span>
+                </a>
+
+                <a class="profile-action btn-message" data-overlay="true">
+                    <!-- <span class="glyphicon glyphicon-envelope"></span> -->
+                    <img src="/img/ico/message.png">
+                    <span class="profile-link-text">Message</span>
+                </a>
+
+                <a class="profile-action btn-endorse" data-overlay="true">
+                    <!-- <span class="glyphicon glyphicon-check"></span> -->
+                    <img src="/img/ico/endorse.png">
+                    <span class="profile-link-text">Endorse</span>
+                </a>
+
+                <a class="profile-action btn-bookmark" data-overlay="true">
+                    <!-- <span class="glyphicon glyphicon-bookmark"></span> -->
+                    <img src="/img/ico/bookmark.png">
+                    <span class="profile-link-text">Bookmark</span>
+                </a>
+
+                <a class="profile-action btn-share" data-overlay="true">
+                    <!-- <span class="glyphicon glyphicon-share"></span> -->
+                    <img src="/img/ico/share.png">
+                    <span class="profile-link-text">Share</span>
+                </a>
+
+            </div>
+
+            <% if (locationName) { %>
+
+            <!-- TODO: add "availability" to the above check -->
+
+                <ul class="profile-meta">
+
+                    <% if (locationName) { %>
+                    <li class="meta-location"><img src="/img/ico/location.png"><%= _.escape(firstName) %> is currently in <strong><%= _.escape(locationName) %></strong></li>
+                    <% }  %>
+
+                    <% if (availability === true) { %>
+                    <li class="meta-available"><img src="/img/ico/tick.png"> and is currently <strong>available for hire</strong> right now.</li>
+                    <% } else { %>
+                    <li class="meta-unavailable"><img src="/img/ico/cross.png">and is currently <strong>unavailable for hire</strong> right now.</li>
+                    <% } %>
+
+                </ul>
+
+            <% } %>
+
+            <% if (status && status.data && status.data.text) { %>
+
+            <% liked = (this_user && _.find(status.likes, function(like) { return like.actor._id == this_user.id; }) ? true : false) %>
+
+			<div class="profile-status newsitem <%= (liked ? 'is-liked' : 'is-unliked') %>" data-id="<%= _.escape(status._id) %>" data-liked="<%= liked %>">
+                <span class="activity-time"><strong>Latest activity</strong> Posted on <%= moment(_.escape(status.time)).format("Do MMMM YYYY") %></span>
+                <div class="activity-text"><%= _.escape(status.data.text) %></div>
+
+				<section>
+					<img src="/img/icon-heart-pink.png" /> <span class="newsLikes"><%= _.size(status.likes) %></span>
+				</section>
+
+				<a href="#" class="newsUnlike"><img src="/img/icon-heart-pink.png" /> <span>Unappreciate this</span></a>
+				<a href="#" class="newsLike"><img src="/img/icon-heart-grey.png" /> <span>Appreciate this</span></a>
+
+				<!-- <% if(this_user) { %>
+					<% if(_.find(status.likes, function(like) { return like.actor._id == this_user.id; })) { %>
+						<a href="#" class="newsUnlike is-liked"><img src="/img/icon-heart-pink.png" /> <span>Unappreciate this</span></a>
+					<% } else { %>
+						<a href="#" class="newsLike is-unliked"><img src="/img/icon-heart-grey.png" /> <span>Appreciate this</span></a>
+					<% } %>
+				<% } %> -->
+            </div>
+
+            <% } %>
+
+
+            <ul class="nav nav-tabs tabs-profile">
+                <li class="active"><a href="#showreel-tab" data-toggle="tab"><img src="/img/ico/showreel.png" width="24" height="24"> Showreel</a></li>
+                <li><a href="#availability-tab" data-toggle="tab"><img src="/img/ico/calendar.png" width="24" height="24"> Availability</a></li>
+                <li><a href="#connections-tab" data-toggle="tab"><img src="/img/ico/connect-both.png" width="24" height="24"> Connections</a></li>
+            </ul>
+
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active" id="showreel-tab">
+                	<div class="showcase"></div>
+                	<div class="showcase-nav">
+                		<button class="btn btn-default btn-xs btn-showcase-prev" data-direction="prev">Prev</button>
+                		<button class="btn btn-default btn-xs btn-showcase-next" data-direction="next">Next</button>
+                	</div>
+                </div>
+                <div class="tab-pane" id="availability-tab"><div class="availability-container"></div></div>
+                <div class="tab-pane" id="connections-tab"><div class="connections-container"></div></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="profile-nav">
+    <ul>
+        <li>
+            <a class="profile-area btn-profile" data-overlay="false">
+                <img src="/img/ico/person.png">
+                <span class="profile-link-text">Profile</span>
+            </a>
+        </li>
+        <li>
+            <a class="profile-area btn-about" data-overlay="true">
+                <!-- <span class="glyphicon glyphicon-info-sign"></span> -->
+                <img src="/img/ico/about.png">
+                <span class="profile-link-text">About</span>
+            </a>
+        </li>
+        <li>
+            <a class="profile-area btn-media" data-overlay="true">
+                <!-- <span class="glyphicon glyphicon-picture"></span> -->
+                <img src="/img/ico/media.png">
+                <span class="profile-link-text">Media</span>
+            </a>
+        </li>
+        <li>
+            <a class="profile-area btn-projects" data-overlay="true">
+                <!-- <span class="glyphicon glyphicon-star"></span> -->
+                <img src="/img/ico/projects.png">
+                <span class="profile-link-text">Projects</span>
+            </a>
+        </li>
+        <li>
+            <a class="profile-area btn-representation" data-overlay="true">
+                <img src="/img/ico/contact.png" width="32" height="32">
+                <span class="profile-link-text">Contacts</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<% if (summary) { %>
+<div class="profile-summary-box"><span class="profile-summary-box-text"><%= _.escape(summary) %></span></div>
+<% } %>

@@ -1,0 +1,33 @@
+<div class="body">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Your personal invitation to SohoMuse</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <img class="bcard" src="<%= baseUrl %>/invite-img/<%= username %>/<%= contact._id %>" width="100%" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p><%= contact.firstName %>,<br><br>I would like to invite you to join my network on SohoMuse, the trusted source for global creative community. Here you will be able to showcase and share your work as well as find unique ways of working more effectively with your peers in an by invitation-only members community.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <a class="btn btn-primary" href="<%= baseUrl %>/register/<%= inviteId %>/<%= inviteCode %>/no">No, thanks</a>
+                <a class="btn btn-primary pull-right" href="<%= baseUrl %>/register/<%= inviteId %>/<%= inviteCode %>/yes">Accept</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="footer">
+                    You received this invitation because a person you know has emailed you. This is not spam and this email will not be repeated. We will not retain your email address.
+                    <br>Copyright SOHOMUSE.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "name": "backbone-poller",
+  "homepage": "https://github.com/uzikilon/backbone-poller",
+  "version": "0.2.8",
+  "_release": "0.2.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.2.8",
+    "commit": "3f96753b607dbfa234acf2687185814d53ce1e55"
+  },
+  "_source": "git://github.com/uzikilon/backbone-poller.git",
+  "_target": "~0.2.8",
+  "_originalSource": "backbone-poller"
+}

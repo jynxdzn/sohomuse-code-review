@@ -1,0 +1,44 @@
+<ul class="nav nav-tabs tabs-connections">
+    <li class="active"><a href="#connections-all" data-toggle="tab" class="tab-connections"><span class="count"></span> <span class="text">Connections</span></a></li>
+    <li><a href="#connections-mutual" data-toggle="tab" class="tab-mutual"><span class="count"></span> <span class="text">Mutual Connections</span></a></li>
+    <li><a href="#connections-endorsements" data-toggle="tab" class="tab-endorsements"><span class="count">0</span> <span class="text">Endorsements</span></a></li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane active" id="connections-all">
+        <div class="row">
+            <div class="col-md-12">
+                <a class="view-all connections-all" data-type="all" href="#user/<%= encodeURIComponent(username) %>/connections/all">View All</a>
+            </div>
+        </div>
+        <div class="row">
+            <!-- <div class="col-sm-1 prev-container-all"></div> -->
+            <div class="col-sm-12 content"></div>
+            <!-- <div class="col-sm-1 next-container-all"></div> -->
+        </div>
+    </div>
+    <div class="tab-pane" id="connections-mutual">
+        <div class="row">
+            <div class="col-md-12">
+                <a class="view-all connections-all" data-type="mutual" href="#user/<%= encodeURIComponent(username) %>/connections/mutual">View All</a>
+            </div>
+        </div>
+        <div class="row">
+            <!-- <div class="col-sm-1 prev-container-mutual"></div> -->
+            <div class="col-sm-12 content"></div>
+            <!-- <div class="col-sm-1 next-container-mutual"></div> -->
+        </div>
+    </div>
+    <div class="tab-pane" id="connections-endorsements">
+        <div class="row">
+            <div class="col-md-12">
+                <a class="view-all connections-all" data-type="endorsements" href="#user/<%= encodeURIComponent(username) %>/connections/endorsements">View All</a>
+            </div>
+        </div>
+        <div class="row">
+            <!-- <div class="col-sm-1 prev-container-endorsements"></div> -->
+            <div class="col-sm-12 content"></div>
+            <!-- <div class="col-sm-1 next-container-endorsements"></div> -->
+        </div>
+    </div>
+</div>

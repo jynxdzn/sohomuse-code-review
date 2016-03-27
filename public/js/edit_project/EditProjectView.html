@@ -1,0 +1,133 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+        </div>
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <h1><%= (added ? "Edit Project: " + title : "Add new project") %></h1>
+
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#detailsTab" data-toggle="tab">Details</a></li>
+                        <li><a href="#peopleTab" data-toggle="tab">Collaborators</a></li>
+                        <% if (added) { %><li><a href="#mediaTab" data-toggle="tab">Media</a></li><% } %>
+                    </ul>
+
+                    <div class="tab-content">
+
+                        <div class="tab-pane active" id="detailsTab">
+
+                            <form class="form-horizontal" role="form">
+
+                                <div class="form-group">
+                                    <label for="title" class="col-sm-2 control-label">Title</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="title" name="title" placeholder="" value="<%= title === null ? "" : title %>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="status" class="col-sm-2 control-label">Status</label>
+                                    <div class="col-sm-4">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="status" id="isNone" value=""> (None)
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="status" id="isLive" value="live" <%= (isLive && ! isComplete ? 'checked="checked"' : '') %>> Live
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="status" id="isComplete" value="complete" <%= (isComplete && ! isLive ? 'checked="checked"' : '') %>> Complete
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="startDate" class="col-sm-2 control-label">Start date</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control datepicker" id="startDate" name="startDate" placeholder="" value="<%= startDate === null ? "" : moment(_.escape(startDate)).format("YYYY-MM-DD") %>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="endDate" class="col-sm-2 control-label">End date</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control datepicker" id="endDate" name="endDate" placeholder="" value="<%= endDate === null ? "" : moment(_.escape(endDate)).format("YYYY-MM-DD") %>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="location" class="col-sm-2 control-label">Location</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="location" name="location" placeholder="" value="<%= location === null ? "" : location %>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="summary" class="col-sm-2 control-label">Summary</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="summary" name="summary" placeholder="" value="<%= summary === null ? "" : summary %>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="background" class="col-sm-2 control-label">Background</label>
+                                    <div class="col-sm-6">
+                                        <textarea class="form-control" id="background" name="background" rows="5"><%= background === null ? "" : background %></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                	<label for="userRoles" class="col-sm-2 control-label">My roles</label>
+                                	<div class="col-sm-6">
+                                		<input type="text" name="userRoles" id="userRoles" class="form-control" data-type="multi" value="<%= (userRoles || []).join(',') %>" />
+                                	</div>
+                                </div>
+
+                                <div class="form-group">
+                                	<label for="requiredRoles" class="col-sm-2 control-label">Required roles</label>
+                                	<div class="col-sm-6">
+                                		<input type="text" name="requiredRoles" id="requiredRoles" class="form-control" data-type="multi" value="<%= (requiredRoles || []).join(',') %>" />
+                                	</div>
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                        <div class="tab-pane" id="peopleTab">
+                            <div class="alert alert-info">Add people from your contact list as collaborators (even those who aren&rsquo;t SohoMuse members yet) &mdash; just start typing their name.</div>
+							<form class="form-horizontal" role="form">
+								<div class="form-group">
+                                    <label for="title" class="col-sm-2 control-label">Add collaborators</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="collaborators" name="collaborators" placeholder="" data-type="multi" value="">
+                                    </div>
+                                </div>
+							</form>
+                        </div>
+
+                        <div class="tab-pane" id="mediaTab">
+                            <button type="button" class="btn btn-primary add-file">Select File</button>
+                            <hr>
+                            <div class="project_files row"></div>
+                        </div>
+
+                        <hr>
+                        <button type="button" class="btn btn-primary save">Save</button>
+                        <a class="btn btn-primary" href="#projects">Close</a>
+                        <% if (added) { %> <button type="button" class="btn btn-primary delete">Delete</button> <% } %>
+                    </div>
+
+                </div>
+                <!-- / .panel-body -->
+
+            </div>
+            <!-- / .panel -->
+
+        </div>
+        <!-- / .col-md-12 -->
+
+    </div>
+
+</div>

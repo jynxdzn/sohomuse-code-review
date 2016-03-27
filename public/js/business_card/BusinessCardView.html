@@ -1,0 +1,44 @@
+<img src="<%= baseUrl || '' %>/img/card-transparent.png" />
+<div class="bcard_txt">
+    <div class="bcard_name">
+        <span class="name"><%= firstName === null ? "" : firstName %> <%= lastName === null ? "" : lastName %></span>
+    </div>
+    <div class="bcard_info">
+        <% if (city || country) { %>
+            <span class="location">
+                <%= city === null ? "" : city %>
+                <%= (city && country) ? ", " : "" %>
+                <%= country === null ? "" : country %>
+            </span>
+        <% } %>
+        <% if (career) { %>
+            <% if (career.occupation) { %>
+                <span class="occupation"><%= career.occupation === null ? "" : career.occupation %></span>
+            <% } %>
+            <% if (career.awards) { %>
+                <span class="awards"><%= career.awards === null ? "" : career.awards %></span>
+            <% } %>
+        <% } %>
+    </div>
+    <div class="bcard_rep">
+        <% if (phone) { %>
+            <span class="phone"><a href="tel:<%= phone %>"><span class="glyphicon glyphicon-phone-alt" style="display: inline"></span> <%= phone %></a></span>
+        <% } %>
+        <% if (social) { %>
+            <% if (social.skype) { %>
+                <span class="skype"><a href="skype:<%= social.skype %>?call"><img src="<%= baseUrl || '' %>/img/skype/icons/Skypeicon_trans_16px.png" /> <%= social.skype %></a></span>
+            <% } %>
+        <% } %>
+        <span class="email"><%= emails[0] %></span>
+    </div>
+</div>
+<div class="bcard_img">
+    <% if (bcard && bcard.img && bcard.img != '') { %>
+        <div style="background-image: url(<%= baseUrl || '' %><%= bcard.img %>); background-size: cover"></div>
+        <!-- <img src="<%= baseUrl || '' %><%= bcard.img %>" height="100%" width="100%" /> -->
+    <% } else { %>
+        <div style="<%= baseUrl || '' %>/img/card-default.png); background-size: cover"></div>
+        <!-- <img src="<%= baseUrl || '' %>/img/card-default.png" height="100%" width="100%" /> -->
+    <% } %>
+    </div>
+</div>

@@ -1,0 +1,105 @@
+<div class="row project-header">
+
+	<div class="col-md-6 project-header-title">
+		<h1>Projects</h1>
+	</div>
+
+	<div class="col-md-6 project-header-meta">
+		<a href="#user/<%= encodeURIComponent(owner.username) %>/projects" class="all-projects">Back to all projects</a>
+	</div>
+
+</div>
+
+<div class="project-detail">
+
+	<div class="row">
+
+		<div class="col-md-8">
+
+			<h2 class="project-title"><%= title %></h2>
+			<% if (userRoles.length > 0) { %><h5 class="project-user-roles">My roles: <%= userRoles.join(', ') %></h5><% } %>
+			<h5 class="project-summary"><%= summary %></h5>
+
+		</div>
+
+		<div class="col-md-4 project-meta">
+			<div class="project-labels">
+				<% if (isLive) { %><span class="label label-primary label-project-active">Active</span><% } %>
+				<% if (isComplete) { %><span class="label label-primary label-project-complete">Complete</span><% } %>
+			</div>
+			<!-- <p>Appreciate this.</p> -->
+		</div>
+
+		<div class="col-md-8 project-main">
+
+			<!-- <% if (photos.length > 0) { %>
+			<img src="/api/v1/files/<%= photos[0]._id %>/thumb?height=400&amp;width=556" class="img-responsive" />
+			<% } else { %>
+			&nbsp;
+			<% } %> -->
+
+			<div class="project-media-large"></div>
+			<div class="project-media-thumbs"></div>
+
+			<h5 class="project-collaborators-title">Collaborators:</h5>
+			<div class="row project-collaborators">
+				<% _.each(collaborators, function(c) { %>
+					<div class="col-md-6 clearfix">
+						<div class="media project-collaborator">
+                            <% if (c.target_username) { %>
+							<a class="pull-left" href="#user/<%= encodeURIComponent(c.target_username) %>">
+								<img class="media-object" src="/api/v1/users/username/<%= c.target_username %>/avatar?width=45&amp;height=45" width="45" height="45">
+							</a>
+                            <% } else { %>
+                            <div class="pull-left">
+                                <img class="media-object" src="/img/card-default-square.png" width="45" height="45">
+                            </div>
+                            <% } %>
+							<div class="media-body">
+								<h4 class="media-heading">
+                                    <% if (c.target_user) { %>
+									<a href="#user/<%= encodeURIComponent(c.target_user.username) %>"><%= c.target_user.firstName %> <%= c.target_user.lastName %></a>
+                                    <% } else { %>
+                                    <a><%= c.firstName %> <%= c.lastName %></a>
+                                    <% } %>
+								</h4>
+								<% if ( (c.target_user && c.target_user.career) || (c.target_user && c.target_user.city) ) { %>
+									<p>
+										<%= c.target_user.career && c.target_user.career.occupation ? '<span class="collaborator-occupation">' + c.target_user.career.occupation + "</span>" : null %>
+										<%= _.compact([c.target_user.city ? c.target_user.city : false, c.target_user.country ? c.target_user.country : false]).join(", ") %>
+									</p>
+								<% } %>
+							</div>
+						</div>
+					</div>
+				<% }); %>
+			</div>
+
+		</div>
+
+		<div class="col-md-4 project-meta project-info">
+			<ul class="profile-meta">
+				<li class="meta-location"><%= location %></li>
+				<%
+				if (startDate || endDate) {
+					var fStart = moment(_.escape(startDate)).format("Do MMMM YYYY");
+					var fEnd = moment(_.escape(endDate)).format("Do MMMM YYYY");
+				%>
+				<li class="meta-calendar">
+					<%
+					if (startDate && endDate) {
+						print(fStart + " - " + fEnd)
+					} else if (startDate && ! endDate) {
+						print("From " + fStart);
+					} else if (endDate && ! startDate) {
+						print("Ends " + fEnd);
+					}
+					%>
+				</li>
+				<% } %>
+			</ul>
+			<div class="project-background"><%= background %></div>
+		</div>
+	</div>
+
+</div>

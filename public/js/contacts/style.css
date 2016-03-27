@@ -1,0 +1,104 @@
+.wrapper.connections-nav {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+
+.wrapper.connections-search {
+	border-bottom: 1px solid #ccc;
+	padding: 0 0 10px 0;
+	margin-bottom: 20px;
+}
+
+.network .nav-tabs {
+	margin-bottom: 0;
+	border-bottom: 0;
+}
+
+
+.network .nav-tabs.alphabet > li > a {
+	border: 0;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+
+.network .nav-tabs.alphabet > li > a:hover,
+.network .nav-tabs.alphabet > li > a:focus {
+	background-color: transparent;
+}
+
+
+.network .panel-body {
+	padding: 0;
+	/*overflow: hidden;*/
+}
+
+.panel-section {
+	padding: 15px;
+}
+.panel-middle {
+	position: relative;
+	border: 1px solid #ccc;
+	border-width: 0 1px;
+	background: #fff;
+	min-height: 80px;
+}
+
+
+/* First item - if contact is a Soho connection, show the Soho Muse icon */
+.contact-soho {
+	padding-top: 15px;
+	text-align: center;
+}
+
+	.contact-soho-img {
+		width: 38px;
+		height: 38px;
+	}
+
+	.contact-soho-count {
+		color: #438ecf;
+		display: block;
+	}
+
+
+.contact-avatar {
+	border: 1px solid #3e3e3e;
+}
+
+.contact-name {
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0 0 2px 0;
+	line-height: 1;
+	color: #747474;
+}
+
+.contact-name a {
+	color: #747474;
+	text-decoration: none;
+}
+
+.contact-occupation,
+.contact-location {
+	font-size: 13px;
+	font-weight: normal;
+	line-height: 1;
+	color: #747474;
+	margin: 0 0 2px 0;
+}
+
+/* <ul> of contact info */
+.contact-methods {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+	.contact-methods li {
+		margin-bottom: 2px;
+	}
+
+.network .btn-invite {
+	margin-top: 5px;
+}

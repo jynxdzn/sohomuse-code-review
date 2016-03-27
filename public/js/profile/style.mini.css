@@ -1,0 +1,424 @@
+/*
+View full profile
+*/
+    .view-full-profile {
+        display: block;
+        margin: 0 0 10px 0;
+        height: 17px;
+        line-height: 17px;
+        color: #000;
+        font-size: 12px;
+        background: url(/img/icon-eye2.png) 0 50% no-repeat transparent;
+        padding-left: 30px;
+        text-decoration: none;
+        color: #000;
+    }
+
+/*
+Profile main nav bar
+*/
+
+    .profile-nav {
+        position: relative;
+        width: 100%;
+        background: #fff;
+        padding: 10px;
+        margin-bottom: 0;
+    }
+
+        .profile-nav ul,
+        .profile-nav ul li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .profile-nav ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .profile-area {
+            display: inline-block;
+            text-align: center;
+            background: transparent;
+            color: #828384;
+            margin: 0;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .profile-area img {
+            width: 32px;
+            height: 32px;
+        }
+
+            .profile-area > span {
+                display: block;
+                margin: 0 0 5px 0;
+            }
+
+        .profile-area.selected,
+        .profile-area:hover {
+            text-decoration: none;
+            color: #76539b;
+        }
+
+    @media (min-width: 768px) {
+
+        .profile-nav {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 65px;
+            background: #fff;
+            padding: 15px 0;
+            margin-bottom: 0;
+        }
+
+        .profile-nav ul li {
+            display: block;
+            margin-right: 0;
+        }
+
+        .profile-area {
+            display: block;
+            margin: 0 0 10px 0;
+        }
+
+    }
+
+
+
+
+
+/*
+Profile summary box floating near bottom left on large screens
+*/
+
+    .profile-summary-box {
+        position: relative;
+        margin-top: 0;
+        background: rgba(255,255,255,0.7);
+        padding: 10px;
+        width: 100%;
+        font-size: 15px;
+        color: #1a1a1a;
+        line-height: 1.4;
+    }
+
+    /* Hide when other pages with frosted background are shown */
+    .pane-wrapper.has-frost .profile-summary-box {
+        display: none;
+    }
+
+    @media (min-width: 768px) {
+
+        .profile-summary-box {
+            position: fixed;
+            bottom: 30px;
+            left: 0;
+            margin-top: 30px;
+            background: rgba(255,255,255,0.7);
+            padding: 15px 15px 15px 30px;
+            width: 530px;
+            font-size: 18px;
+            color: #1a1a1a;
+            line-height: 1.4;
+            max-width: 50%;
+        }
+
+        .pane-wrapper .has-frost .profile-summary-box {
+            display: none;
+        }
+
+    }
+
+
+
+
+/*
+User action buttons
+*/
+
+    .profile-actions {
+        margin: 10px 0 30px 0;
+        text-align: left;
+    }
+
+        .profile-action {
+            text-decoration: none;
+            display: inline-block;
+            width: auto;
+            text-align: center;
+            background: transparent;
+            color: #828384;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 0 5px 0 0;
+            max-width: 60px;
+        }
+
+            .profile-action img {
+                width: 24px;
+                height: 24px;
+            }
+
+            .profile-action.active {
+                color: #76539b;
+            }
+
+            .profile-action:hover {
+                text-decoration: none;
+            }
+
+            .profile-action > span {
+                display: block;
+            }
+
+    @media (min-width: 1200px) {
+
+        .profile-action {
+            margin: 0 20px 0 0;
+            max-width: 60px;
+        }
+
+        .profile-action img {
+            width: 32px;
+            height: 32px;
+        }
+
+    }
+
+
+
+
+
+
+/*
+Location & Availability
+*/
+
+    .profile-meta,
+    .profile-meta li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .profile-meta {
+        margin: 0 0 30px 0;
+        font-size: 14px;
+        color: #000;
+    }
+
+        .profile-meta li {
+            display: block;
+            padding: 0;
+            margin: 0 0 5px 0;
+            background-position: 0 50%;
+            background-repeat: no-repeat;
+            background-color: transparent;
+        }
+
+        .profile-meta li img {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+        }
+
+
+
+
+/*
+Latest activity box
+*/
+
+    .profile-status {
+        background-color: rgba(115, 109, 98, 0.1);
+        padding: 15px 10px;
+        margin: 0 0 30px 0;
+    }
+
+        .profile-status > span {
+            display: block;
+            margin: 0 0 10px 0;
+        }
+
+        .profile-status .activity-time {
+            margin: 0 0 5px 0;
+            padding: 0;
+            font-size: 13px;
+            color: #000;
+        }
+
+        .profile-status .activity-text {
+            color: #3d3d3d;
+            font-size: 14px;
+            line-height: 1.3;
+            margin-bottom: 5px;
+        }
+
+        .profile-status .appreciate {
+            font-size: 13px;
+            color: #3d3d3d;
+            text-decoration: none;
+        }
+
+        .profile-status .appreciate:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .profile-status.is-liked .newsLike { display: none; }
+        .profile-status.is-liked .newsUnlike { display: block; }
+
+        .profile-status.is-unliked .newsLike { display: block; }
+        .profile-status.is-unliked .newsUnlike { display: none; }
+
+
+
+
+/*
+Tabs for showreel/availability/contacts
+*/
+
+    .tabs-profile {
+        padding: 0;
+        border-bottom: 0;
+        margin-bottom: 15px;
+    }
+
+    .tabs-profile > li {
+        width: 33%;
+    }
+
+    .tabs-profile > li > a {
+        border: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        color: #000;
+        font-size: 12px;
+        line-height: 24px;
+        vertical-align: middle;
+        padding: 0;
+        text-align: center;
+    }
+
+    .tabs-profile > li > a:hover,
+    .tabs-profile > li.active > a,
+    .tabs-profile > li.active > a:hover,
+    .tabs-profile > li.active > a:focus {
+        border: 0;
+        /*border-right: 1px solid #ddd;*/
+        background: none;
+        color: #76539b;
+    }
+
+    .tabs-profile > li:last-child > a,
+    .tabs-profile > li.active:last-child > a {
+        border-right: 0;
+    }
+
+    .tabs-profile > li > a > img {
+        width: 24px;
+        height: 24px;
+        display: block;
+        margin: 0 auto;
+    }
+
+
+    @media (min-width: 768px) {
+
+        .tabs-profile > li > a > img {
+            width: 32px;
+            height: 32px;
+            display: inline;
+            margin: auto;
+        }
+
+        .tabs-profile > li > a {
+            text-align: left;
+        }
+
+    }
+
+
+
+
+/*
+Showreel
+*/
+
+    .showcase-nav {
+        text-align: center;
+    }
+
+    .showreel-items {
+        margin: 0 0 15px 0;
+    }
+    .showreel-items a {
+        display: none;
+        text-decoration: none;
+        position: relative;
+    }
+
+    .showreel-items a:first-child {
+        display: block;
+    }
+
+    .showcase .showcase-title {
+        background: rgba(0, 0, 0, 0.7);
+        padding: 5px;
+        color: #999;
+        text-decoration: none;
+        width: 100%;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        z-index: 10000;
+    }
+
+    .pane-showcase {
+        position: relative;
+    }
+
+    .showcase-btn-prev,
+    .showcase-btn-next {
+        width: 28px;
+        height: 52px;
+        display: inline-block;
+        border: 0;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        background-position: 50% 50%;
+        position: absolute;
+        z-index: 1000;
+        height: 100%;
+    }
+
+    .showcase-btn-prev:hover,
+    .showcase-btn-next:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .showcase-btn-prev:focus,
+    .showcase-btn-next:focus {
+        outline-width: 0;
+    }
+
+    .showcase-btn-prev { left: 0; background-image: url(/img/zarr-left.png); }
+    .showcase-btn-next { right: 0; background-image: url(/img/zarr-right.png); }
+
+    .showcase {
+    }
+
+    .showcase-image {
+        background-color: #333;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 240px;
+    }

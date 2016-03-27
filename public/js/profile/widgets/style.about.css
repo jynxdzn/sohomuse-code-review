@@ -1,0 +1,54 @@
+/*
+About/bio content
+*/
+
+.profile-about {
+    padding: 15px;
+}
+
+.about-summary {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.profile-about img {
+  max-width: 100%;
+  height: auto;
+}
+
+.about-bio {
+    font-size: 12px;
+}
+
+.profile-about {
+    color: #585858;
+}
+
+
+.profile-about ul,
+.profile-about ul li {
+    margin: 0;
+    padding: 0;
+    list-style: square;
+    font-size: 14px;
+}
+
+    .profile-about ul {
+        margin: 0 0 20px 15px;
+    }
+
+    .profile-about ul li {
+        line-height: 1.5;
+    }
+
+
+
+
+@media (min-width: 768px) {
+
+    .profile-about {
+        margin-left: 85px;
+        padding: 0;
+    }
+
+}

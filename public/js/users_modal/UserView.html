@@ -1,0 +1,14 @@
+<div class="col-md-2" style="margin-bottom: 20px;">
+	<h5 style="margin: 0"><a href="#user/<%= encodeURIComponent(username) %>" class="dismiss" style="color:#fff"><%= firstName %> <%= lastName %></a></h5>
+	<p style="overflow: hidden; text-overflow: ellipsis; white-space: no-wrap; width: 100%; color: #999">
+		<% if (city) { %>
+			<%= city %>,
+		<% } %>
+
+		<%= country %>
+	</p>
+    <a href="#user/<%= encodeURIComponent(username) %>" class="dismiss">
+    	<img src="/api/v1/users/username/<%= encodeURIComponent(username) %>/avatar" style="width: 100%" class="img-rounded">
+    </a>
+    <p><%= counts.connections %> connections</p>
+</div>

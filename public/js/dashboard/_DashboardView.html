@@ -1,0 +1,149 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-4" id="newsfeed-viewport">
+        	<div class="dashboard-col-inner">
+
+				<h2>My Newsfeed</h2>
+				<div class="newsfeed-inner">
+					(loading...)
+				</div>
+
+			</div>
+        </div> <!-- / .col-md-4 -->
+
+        <div class="col-md-4">
+        	<div class="dashboard-col-inner">
+
+				<div class="row">
+					<div class="col-md-12">
+
+						<h2>My Projects <span class="project-count"></span>
+							<div class="pull-right">
+								<a href="#user/<%= encodeURIComponent(username) %>/projects" class=" btn btn-simple btn-project-all">View All</a>
+								<a href="#user/<%= encodeURIComponent(username) %>/projects" class=" btn btn-simple btn-project-new"><span class="plus">+</span> New</a>
+							</div>
+						</h2>
+						<div class="projects-inner">
+							(loading...)
+						</div>
+
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<h2>My Bookmarked People <a href="#contacts?type=bookmarks"><img src="/img/icon-eye.png" class="pull-right" /></a></h2>
+
+						<div class="bookmarks-inner">
+							(loading...)
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<h2>People in my Area <a href="#contacts?type=nearby"><img src="/img/icon-eye.png" class="pull-right" /></a></h2>
+
+						<div class="nearby-inner">
+							(loading...)
+						</div>
+					</div>
+				</div>
+
+			</div>
+        </div> <!-- / .col-md-4 -->
+
+        <div class="col-md-4">
+        	<div class="dashboard-col-inner">
+
+				<div class="row">
+					<div class="col-md-12 no-col-padding">
+	                    <div class="col-sm-12 no-col-padding bcard-container"></div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<p>
+							<% if(locationName) { %>
+								I'm in <strong><%= _.escape(locationName) %></strong> right now.
+							<% } else { %>
+								I'm haven't set a location.
+							<% } %>
+							<button class="btn btn-simple pull-right action-location-toggle">change</button></p>
+						</p>
+
+						<form role="form" id="form_set_location" class="initial_hide">
+							<div class="form-group">
+								<input id="location_name" class="form-control" name="location_name" placeholder="Enter your current location here...">
+							</div>
+
+							<button type="button" class="btn btn-simple action-location-set pull-right">Set Location</button>
+						</form>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<form role="form" class="form-inline">
+							<p>
+								<% if(availability === true) { %>
+									I'm <strong>available</strong> for booking enquiries.
+								<% } else { %>
+									I'm <strong>not available</strong> for booking enquiries.
+								<% } %>
+								<button class="btn btn-simple pull-right action-availability-toggle">change</button>
+							</p>
+						</form>
+
+						<form role="form" id="form_set_availability" class="initial_hide">
+							<div class="form-group">
+								<div class="checkbox">
+									<div class="checkbox">
+										<label>
+											<input id="available" type="checkbox" name="available"> Available
+										</label>
+									</div>
+									<div class="checkbox">
+										<label>
+											<input id="unavailable" type="checkbox" name="unavailable"> Unavailable
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<button type="button" class="btn btn-simple action-availability-set pull-right">Set Availability</button>
+						</form>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<h2>Update My Status</h2>
+
+						<form role="form">
+							<div class="form-group">
+								<textarea id="status_text" class="form-control" name="status_text" placeholder="Enter your current status here..."></textarea>
+							</div>
+
+							<button type="button" class="btn btn-simple action-status-set pull-right">Set Status</button>
+						</form>
+					</div>
+				</div>
+
+				<div class="row frost-dark">
+					<div class="col-md-12">
+						<h2>My connections <a href="#contacts?type=connections"><img src="/img/icon-eye.png" class="pull-right" /></a></h2>
+
+						<div class="connections-inner">
+							(loading...)
+						</div>
+					</div>
+				</div>
+
+        	</div>
+        </div> <!-- / .col-md-4 -->
+
+    </div> <!-- / .row -->
+</div> <!-- / .container-fluid -->

@@ -1,0 +1,6 @@
+<img class="media-object profile-pic-medium" src="/api/v1/users/username/<%= encodeURIComponent(data.userUsername) %>/avatar?width=48&amp;height=48">
+<% if(data.userId == this_user.id) { %>
+	You!
+<% } else { %>
+	<a href="#user/<%= encodeURIComponent(data.userUsername) %>"><%= _.escape(data.userFirstName) %> <%= _.escape(data.userLastName) %></a>
+<% } %>

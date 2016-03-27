@@ -1,0 +1,262 @@
+.availability-container {
+    background-color: rgba(255, 255, 255, 0.73);
+    padding: 15px;
+}
+
+.availability-nav {
+    margin-bottom: 5px;
+}
+
+    .availability-nav-next {
+        text-align: right;
+    }
+
+
+.availability-year,
+.availability-month {
+    color: #908b81;
+    font-weight: bold;
+    display: block;
+    line-height: 1;
+}
+
+.availability-year {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.availability-month {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.availability-year > span {
+    border-bottom: 3px solid #908b81;
+}
+
+
+
+
+.clndr .row {
+	position: relative;
+}
+
+.calendar-btn-prev,
+.calendar-btn-next {
+	width: 14px;
+	height: 52px;
+	display: inline-block;
+	border: 0;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	background-position: 50% 50%;
+	top: 50%;
+	margin-top: -26px;
+	position: absolute;
+    z-index: 100;
+}
+
+
+.calendar-btn-prev { left: 15px; background-image: url(/img/zarr-left.png); }
+.calendar-btn-next { right: 15px; background-image: url(/img/zarr-right.png); }
+
+	/* Big Calendar variations */
+
+	.calendar-big .calendar-btn-prev,
+	.calendar-big .calendar-btn-next {
+		width: 42px;
+		height: 156px;
+		margin-top: -78px;
+	}
+
+	.calendar-big .calendar-btn-prev { left: 15px; background-image: url(/img/zarr-left-lg.png); }
+	.calendar-big .calendar-btn-next { right: 15px; background-image: url(/img/zarr-right-lg.png); }
+
+.calendar-meta {
+	text-align: right;
+}
+
+.calendar-year,
+.calendar-month {
+	color: #908b81;
+	font-weight: bold;
+	display: inline-block;
+	line-height: 1;
+}
+
+.calendar-year {
+	font-size: 30px;
+	margin-bottom: 15px;
+}
+
+.calendar-month {
+	text-transform: uppercase;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+.calendar-month,
+.calendar-enquire,
+.calendar-view {
+	margin-bottom: 5px;
+}
+
+.calendar-year > span {
+	border-bottom: 3px solid #908b81;
+}
+
+@media (min-width: 768px) {
+
+    .calendar-year,
+    .calendar-month {
+        display: block;
+    }
+
+    .calendar-month,
+    .calendar-enquire,
+    .calendar-view {
+        margin-bottom: 20px;
+    }
+
+    .pane-content .calendar {
+        margin-left: 85px;
+        padding: 0;
+    }
+
+}
+
+
+
+
+/**
+ * Grid
+ */
+
+    .calendar-wrapper {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+	.calendar-grid {
+		border-spacing: 0 5px;
+    	border-collapse: separate;
+    	width: 100%;
+    }
+
+    .calendar-grid thead tr th,
+    .calendar-grid thead tr td,
+    .calendar-grid tbody tr td,
+    .calendar-grid tbody tr th {
+    	width: 14%;
+    	text-align: center;
+    	background: transparent;
+    	font-size: 12px;
+    }
+
+    /* Day name */
+    .calendar-grid .header-days td span {
+		display: inline-block;
+		width: 22px;
+		padding-bottom: 3px;
+		border-bottom: 3px solid #707070;
+		color: #707070;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+
+	.calendar-grid .day-contents { color: #707070; }
+
+	.calendar-grid .event .day-contents {
+		background-color: #76539b;
+		color: #76539b;
+	}
+
+	.calendar-container.is-editable .calendar-grid .day-contents:hover {
+		background-color: #76539b;
+		color: #76539b;
+		cursor: pointer;
+	}
+
+	.calendar-container.is-editable .calendar-grid .event .day-contents:hover {
+		background: transparent;
+		color: #707070;
+		cursor: pointer;
+	}
+
+	.calendar-grid .adjacent-month {
+		visibility: hidden;
+	}
+
+    @media (min-width: 768px) {
+
+        .calendar-wrapper {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+    }
+
+
+/**
+ * Key
+ */
+
+    .status-busy {
+        background-color: #76539b;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .status-free {
+        color: #707070;
+        font-weight: normal;
+    }
+
+
+.calendar .view-all {
+    float: right;
+    display: none;
+    margin: 0 0 10px 0;
+    height: 17px;
+    line-height: 17px;
+    color: #000;
+    font-size: 11px;
+    background: url(/img/icon-eye2.png) 0 50% no-repeat transparent;
+    padding-left: 30px;
+    text-decoration: none;
+}
+
+    @media (min-width: 768px) {
+
+        .calendar .view-all {
+            float: right;
+            display: block;
+            margin: 0 0 10px 0;
+            height: 17px;
+            line-height: 17px;
+            color: #000;
+            font-size: 11px;
+            background: url(/img/icon-eye2.png) 0 50% no-repeat transparent;
+            padding-left: 30px;
+            text-decoration: none;
+        }
+
+    }
+
+
+
+/**
+ * Big version
+ */
+
+	.calendar-big .calendar-grid .day-contents {
+		padding: 16px 0;
+    	font-size: 16px;
+    }
+
+
+
+
+.calendar-big .calendar-nav {
+	margin-bottom: 20px;
+}

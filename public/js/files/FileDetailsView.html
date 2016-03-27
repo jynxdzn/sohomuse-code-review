@@ -1,0 +1,207 @@
+<div class="container">
+	<div class="row">
+		<h1><%= name %></h1>
+		<p><a href="#files"><- Back to Files</a></p>
+	</div>
+	<div class="row">
+	<div class="row">
+		<div class="col-md-6">
+			<div><img id="preview" src="/api/v1/files/<%= _id %>/thumb?width=400" style="width: 100%; padding: 0; border: 0;" class="img-thumbnail"></div>
+			<br>
+			<div class="">
+				<% if (type == 'local') { %>
+					<a href="/api/v1/files/<%= _id %>/download" class="btn btn-small btn-primary">Download</a>
+				<% } %>
+				<% if (isImage) { %>
+					<a href="#" class="btn btn-warning btn-small edit">Edit</a>
+				<% } %>
+				<a href="#" class="btn btn-danger btn-small delete">Delete</a>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<% if (owner == this_user.id) { %>
+
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#info" data-toggle="tab">Info</a></li>
+                    <% if (isImage || isVideo || isAudio) { %>
+						<li><a href="#credits" data-toggle="tab">Credits</a></li>
+                    <% } %>
+					<li><a href="#showcase" data-toggle="tab">Showcase</a></li>
+				</ul>
+
+				<div class="tab-content">
+					<div class="tab-pane active" id="info">
+
+						<form class="form-horizontal" role="form">
+
+							<div class="form-group">
+								<label for="name" class="col-sm-3 control-label">Name</label>
+								<div class="col-sm-9">
+									<input type="text" class="form-control" id="name" name="name" placeholder="" value="<%= name %>">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="description">Description</label>
+								<div class="col-sm-9">
+									<textarea class="form-control" id="description" class="form-control"><%= description %></textarea>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="tags">Tags</label>
+								<div class="col-sm-9">
+									<input type="text" id="tags" class="form-control" value="<%= (tags || []).join(',') %>" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="shares">Shared with</label>
+								<div class="col-sm-9">
+									<input type="text" id="shares" class="form-control" value="<%= (shared_with || []).join(',') %>" />
+								</div>
+							</div>
+                            <div class="form-group">
+                                <label for="ownerCredit" class="col-sm-3 control-label">My credit</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="ownerCredit" name="ownerCredit" placeholder="" value="<%= ownerCredit %>">
+                                </div>
+                            </div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Options</label>
+								<div class="col-sm-9">
+									<div class="checkbox">
+										<label for="isPrivate">
+											<input type="checkbox" id="isPrivate" <%= isPrivate ? " checked " : "" %> />
+											Keep Private
+										</label>
+									</div>
+									<% if (isImage || isVideo || isAudio) { %>
+									<div class="checkbox">
+										<label for="showInGallery">
+											<input type="checkbox" id="showInGallery" <%= showInGallery ? " checked " : "" %> />
+											Show in gallery
+										</label>
+									</div>
+									<% } %>
+                                    <% if (isImage) { %>
+                                    <div class="checkbox">
+                                        <label for="makeBackgroundImg">
+                                            <input type="checkbox" id="makeBackgroundImg" />
+                                            Make background image
+                                        </label>
+                                    </div>
+                                    <% } %>
+								</div>
+							</div>
+						</form>
+					</div>
+
+					<% if (isImage || isVideo || isAudio) { %>
+						<div class="tab-pane form-horizontal" id="credits">
+
+                            <% if (credits.length) { %>
+
+                                <% _.each(credits, function(credit) { %>
+                                <div class="form-group">
+                                    <label class="col-sm-4">
+                                        <select class="form-control credit-user-role is-current" name="credit_role">
+                                            <% if (credit && credit.role) { %>
+                                            <option value="<%= credit.role %>" selected="selected"><%= credit.role %></option>
+                                            <% } %>
+                                            <% _.each(roles, function(role) { %>
+                                            <option value="<%= role %>"><%= role %></option>
+                                            <% }) %>
+                                        </select>
+                                    </label>
+                                    <div class="col-sm-6">
+                                        <input name="credit_user" type="text" id="" class="form-control credit-user is-current" value="<%= (credit && credit.contact ? credit.contact : '') %>" />
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <a class="remove-credit" href="#" style="line-height:32px">Remove</a>
+                                    </div>
+                                </div>
+                                <% }) %>
+
+                            <% } %>
+
+                            <div class="new-credits">
+                            </div>
+
+                            <div class="form-group empty-credit hidden">
+                                <label class="col-sm-4">
+                                    <select class="form-control credit-user-role" name="credit_role" id="">
+                                        <% _.each(roles, function(role) { %>
+                                        <option value="<%= role %>"><%= role %></option>
+                                        <% }) %>
+                                    </select>
+                                </label>
+                                <div class="col-sm-6">
+                                    <input name="credit_user" type="text" id="" class="form-control credit-user" value="" />
+                                </div>
+                                <div class="col-sm-2">
+                                    <a class="remove-credit" href="#" style="line-height:32px">Remove</a>
+                                </div>
+                            </div>
+
+                            <br>
+                            <button class="btn btn-xs pull-right add-credit" type="button">Add Credit</button>
+                            <br><br>
+
+						</div>
+					<% } %>
+					<div class="tab-pane form-horizontal" id="showcase">
+
+						<div class="form-group">
+							<div class="col-sm-offset-3 col-sm-9">
+								<div class="checkbox">
+									<label for="showInShowcase">
+										<input type="checkbox" id="showInShowcase" <%= showInShowcase ? " checked " : "" %> />
+										Show in Showcase (featured on your profile)
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="showcaseTitle">Title</label>
+							<div class="col-sm-9">
+								<input type="text" id="showcaseTitle" class="form-control" value="<%= showcaseTitle %>" />
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="showcaseText">Text</label>
+							<div class="col-sm-9">
+								<textarea id="showcaseText" class="form-control"><%= showcaseText %></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <br><br>
+                <button type="button" class="btn btn-primary btn-small save">Save</button>
+				<button type="button" class="btn btn-primary btn-small exit">Close</button>
+			<% } else { %>
+				<dl>
+				  <dt>Name</dt>
+				  <dd><%= name %></dd>
+				  <dt>Description</dt>
+				  <dd><%= description %></dd>
+				  <dt>Tags</dt>
+				  <dd><%= (tags || []).join(', ') %></dd>
+				</dl>
+			<% } %>
+
+			<% if (owner == this_user.id) { %>
+				<% if(isAudio) { %>
+                    <br><br>
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<p class="lead">Upload some album artwork</p>
+							<div id="fileupload"></div>
+							<p>Maximum file upload size: 20MB</p>
+						</div>
+					</div>
+				<% } %>
+			<% } %>
+		</div>
+	</div>
+</div>

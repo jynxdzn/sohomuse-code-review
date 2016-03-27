@@ -1,0 +1,7 @@
+<a class="pull-left" href="#/user/<%= owner.username %>">
+    <img class="img_40" src="/api/v1/users/username/<%= owner.username %>/avatar?width=50&amp;height=50" />
+</a>
+<div class="media-body">
+    <h4 class="media-heading" style="font-size: 90%"> <%= owner.firstName %> <%= owner.lastName %> wrote <% print (moment(added).fromNow()); %></h4>
+    <%= body %>
+</div>

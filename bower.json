@@ -1,0 +1,36 @@
+{
+  "name": "sohomuse",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "~1.11.1",
+    "backbone": "~1.1.0",
+    "underscore": "~1.6.0",
+    "normalize-css": "~3.0.1",
+    "requirejs": "~2.1.14",
+    "requirejs-text": "~2.0.12",
+    "bootstrap": "3.1.0",
+    "require-css": "~0.1.4",
+    "marionette": "~1.8.6",
+    "selectize": "~0.9.1",
+    "blueimp-file-upload": "~9.5.7",
+    "backbone-query-parameters": "~0.3.0",
+    "backbone-poller": "~0.2.8",
+    "moment": "~2.6.0",
+    "backbone.eventbinder": "~1.0.2",
+    "jquery-ui": "~1.10.3",
+    "backbone-relational": "~0.8.8",
+    "imgareaselect": "~0.9.11",
+    "jquery.cookie": "~1.4.1"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "resolutions": {
+    "moment": ">=2.8.3"
+  }
+}

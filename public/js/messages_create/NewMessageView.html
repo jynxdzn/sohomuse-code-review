@@ -1,0 +1,51 @@
+<h1>New Conversation</h1>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+
+        <div class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="recipients">Send to</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" id="recipients" data-type="multi" value="<%= (typeof(recipient) != 'undefined' ? recipient : "") %>" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="recipients">Subject</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" id="subject" data-type="multi" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="recipients">Message</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" id="body" data-type="multi" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-2">
+                    <button type="button" class="btn btn-primary btn-block btn-send">Send Message</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- <div class="form-group input-group">
+    <label class="input-group-addon" for="recipients">Send to</label>
+    <input type="text" id="recipients" class="form-control" data-type="multi" />
+</div>
+<div class="form-group input-group">
+    <label class="input-group-addon" for="subject">Subject</label>
+    <input type="text" id="subject" class="form-control" />
+</div>
+<div class="form-group input-group">
+    <label class="input-group-addon" for="body">Message</label>
+    <textarea id="body" class="form-control"></textarea>
+</div>
+<button type="button" class="btn btn-primary btn-block btn-send">Send Message</button> -->

@@ -1,0 +1,96 @@
+<div class="row">
+
+	<div class="col-md-1 contact-soho">
+		<% if (username !== null) { %>
+		<img class="contact-soho-img" src="/img/contact-soho.png">
+		<span class="contact-soho-count"><%= user.counts.connections %></span>
+		<% } %>
+	</div>
+
+	<div class="col-md-11">
+
+		<div class="panel panel-default panel-gradient">
+
+			<div class="panel-body">
+				<div class="col-md-4 panel-section">
+					<div class="media">
+						<% if (username === null) { %>
+						<div class="pull-left">
+							<img class="media-object contact-avatar" src="/img/card-default-square.png" width="50" height="50">
+						</div>
+						<% } else { %>
+						<a class="pull-left" href="#user/<%= encodeURIComponent(username) %>">
+							<img class="media-object contact-avatar" src="/api/v1/users/username/<%= encodeURIComponent(username) %>/avatar?width=50&amp;height=50" width="50" height="50">
+						</a>
+						<% } %>
+
+						<div class="media-body">
+							<% if (typeof username == 'string') { %>
+								<h3 class="contact-name"><a href="#user/<%= encodeURIComponent(username) %>"><%= _.escape(firstName) %> <%= _.escape(lastName) %></a></h3>
+							<% } else { %>
+								<h3 class="contact-name"><%= _.escape(firstName) %> <%= _.escape(lastName) %></h3>
+							<% } %>
+
+							<% if (user && user.career && user.career.occupation) { %>
+							<h4 class="contact-occupation"><%= user.career.occupation %></h4>
+							<% } %>
+
+							<%
+							if ( (user && user.city && user.city.length > 0) || (user && user.country && user.country.length > 0) ) {
+								print('<h4 class="contact-location">');
+								location = [];
+								if (user.city) location.push(user.city);
+								if (user.country) location.push(user.country);
+								print(location.join(', '));
+								print('</h4>');
+							}
+							%>
+							<!-- <p>Added <% print (moment(added).fromNow()); %></p> -->
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5 panel-section panel-middle">
+					<ul class="contact-methods">
+						<% if (phone) { %>
+						<li><strong>t:</strong> <a href="tel:<%= phone %>"><%= _.escape(phone) %></a></li>
+						<% } %>
+
+						<% if (emails.length > 0) { %>
+						<li><strong>e:</strong> <a href="mailto:<%= emails[0] %>"><%= _.escape(emails[0]) %></a></li>
+						<% } %>
+
+						<% if (user && user.social && user.social.skype) { %>
+						<li><strong>s:</strong> <a href="skype:<%= _.escape(user.social.skype) %>?call"><%= _.escape(user.social.skype) %></a></li>
+						<% } %>
+					</ul>
+				</div>
+				<div class="col-md-3 panel-section text-center">
+                    <!-- Split button -->
+                    <div class="btn-group text-left clearfix">
+                        <a class="btn btn-sm btn-edit" href="#contact/<%= encodeURIComponent(_id) %>">Edit</a>
+                        <button type="button" class="btn btn-sm dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/api/v1/contacts/<%= encodeURIComponent(_id) %>/vcard.vcf">Vcard</a></li>
+                            <li class="divider"></li>
+                            <li><a class="btn-sendbcard" href="#">Send Business Card</a></li>
+                            <% if (username === null && ! invite) { %>
+                            <li><a class="btn-invite" href="#">Invite to SohoMuse</a></li>
+                            <% } %>
+                            <% if (username === null && invite && (invite.accepted === false)) { %>
+                            <li><a class="btn-invite" href="#">Re-send invite</a></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                    <% if (username === null && invite) { %>
+                    <div><small>Invited on <%= moment(_.escape(invite.date)).format("MMM D YYYY") %></small></div>
+                    <% } %>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>

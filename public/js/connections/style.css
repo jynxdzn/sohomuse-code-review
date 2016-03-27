@@ -1,0 +1,203 @@
+.mini-connections-list {
+
+}
+
+.mini-connections-user {
+    margin: 0 5px 5px 5px;
+    display: block;
+    float: left;
+}
+
+    .mini-connections-user .media-heading > a {
+        color: #111 ;
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 1;
+        text-decoration: none;
+    }
+
+
+
+.mini-connections {
+    background-color: rgba(255, 255, 255, 0.73);
+    padding: 0 0 15px 0;
+}
+
+    .mini-connections .view-all {
+        display: block;
+        margin: 0 0 10px 0;
+        height: 17px;
+        line-height: 17px;
+        color: #000;
+        font-size: 11px;
+        background: url(/img/icon-eye2.png) 0 50% no-repeat transparent;
+        padding-left: 30px;
+        text-decoration: none;
+        float: right;
+    }
+
+    .mini-connections .view-all:hover {
+        color: #76539b;
+    }
+
+    .mini-connections .nav-tabs {
+        margin: 0;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .mini-connections .nav-tabs > li {
+        margin-bottom: 0;
+        width: 33%;
+    }
+
+    /* Make the tabs look un-tab-like */
+
+    .mini-connections .nav-tabs > li > a {
+        margin-right: 2px;
+        border: 0;
+        border-right: 1px solid #ccc;
+        border-radius: 0;
+        color: #767778;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .mini-connections .nav-tabs > li > a:hover,
+    .mini-connections .nav-tabs > li.active > a,
+    .mini-connections .nav-tabs > li.active > a:hover,
+    .mini-connections .nav-tabs > li.active > a:focus {
+        color: #76539b;
+        background-color: transparent;
+        border: 0;
+        border-right: 1px solid #ccc;
+    }
+
+    .mini-connections .nav-tabs > li:last-child > a,
+    .mini-connections .nav-tabs > li.active:last-child > a {
+        border: 0;
+    }
+
+    .mini-connections .nav-tabs > li > a > .count {
+        display: block;
+        margin: 0;
+        padding: 0;
+        font-size: 50px;
+        font-weight: normal;
+        line-height: 1;
+    }
+
+    .mini-connections .nav-tabs > li > a > .text {
+        display: block;
+        font-size: 11px;
+        font-weight: normal;
+        height: 30px;
+    }
+
+    .mini-connections .tab-content {
+        padding: 15px;
+    }
+
+
+.mini-connections .cpaginate-pager-item {
+    height: 30px;
+    line-height: 30px;
+    width: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+.connections-full {
+    padding: 15px;
+}
+
+.users-viewport {
+    margin-top: 30px;
+}
+
+    .full-connections-user {
+        margin-bottom: 15px;
+        height: 250px;
+    }
+
+        .full-connections-user a {
+            color: inherit;
+        }
+
+        .full-connections-user .user-avatar {
+            display: block;
+            margin: 0 0 10px 0;
+        }
+
+        .full-connections-user .user-name {
+            color: #212121;
+            display: block;
+            margin: 0 0 5px 0;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .full-connections-user .user-location {
+            color: #666666;
+            display: block;
+            margin: 0 0 5px 0;
+            padding: 0;
+            line-height: 1;
+        }
+
+
+
+
+@media (min-width: 768px) {
+
+    .mini-connections .nav-tabs > li > a {
+        padding: 15px 0;
+    }
+
+    .mini-connections .nav-tabs > li > a > .text {
+        display: block;
+        font-size: 11px;
+        font-weight: normal;
+        height: auto;
+    }
+
+    .connections-full {
+        margin-left: 85px;
+        padding: 0;
+    }
+
+}
+
+
+
+
+
+@media (min-width: 768px) {
+
+    .full-connections-user {
+        height: 270px;
+    }
+
+}
+
+
+
+@media (min-width: 992px) {
+
+    .full-connections-user {
+        height: 230px;
+    }
+
+}
+
+
+
+@media (min-width: 1200px) {
+
+    .full-connections-user {
+        height: 260px;
+    }
+
+}

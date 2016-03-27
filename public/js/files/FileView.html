@@ -1,0 +1,42 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title"><a href="#files/<%= _id %>"><%= name %></a></h3>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-3 col-md-3 col-lg-3">
+            <a href="#files/<%= _id %>">
+                <img src="/api/v1/files/<%= _id %>/thumb?width=200&amp;height=200" style="width: 100%" class="img-thumbnail">
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <dl>
+                <dt>Added</dt>
+                <dd><%= moment(added).format("MMM D YYYY") %></dd>
+
+                <% if (description) { %>
+                <dt>Description</dt>
+                <dd><%= description %></dd>
+                <% } %>
+
+                <% if (tags.length > 0) { %>
+                <dt>Tags</dt>
+                <dd><%= tags.join(', ') %></dd>
+                <% } %>
+            </dl>
+        </div>
+        <div class="col-sm-3 col-md-3 col-lg-3">
+            <div class="btn-group-vertical pull-right">
+                <a href="#files/<%= _id %>" class="btn btn-success">View</a>
+                <% if (owner.username == window.this_user.username) { %>
+                    <% if(type == 'local') { %>
+                        <a href="/files/<%= _id %>/download" class="btn btn-primary">Download</a>
+                    <% } %>
+                    <% if(isAudio) { %>
+						<a href="#files/<%= _id %>?action=add-art" class="btn btn-success">Add Art</a>
+                    <% } %>
+                    <a href="#files" class="delete btn btn-danger">Delete</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>

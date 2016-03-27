@@ -1,0 +1,96 @@
+#notifications {
+    margin: 14px 20px 0 20px;
+	padding-bottom: 8px;
+}
+
+#notifications .notify-container {
+    padding: 0;
+    vertical-align: middle;
+}
+
+#notifications .notify-container:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+#notifications .notify-container > span {
+    margin-left: 20px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+#notifications .notify-container span img {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+
+.notify-item {
+	position: relative;
+}
+
+	.notify-item .notify-count {
+		position: absolute;
+		top: -5px;
+		right: -5px;
+		background-color: #76539b;
+		color: #fff;
+		border-radius: 50%;
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+		vertical-align: middle;
+		display: block;
+	}
+
+#notifications .notify-container span:first-child {
+    margin-left: 0;
+}
+
+
+
+/* Content divs */
+
+.notifications-wrapper {
+    width: 300px;
+    max-width: 100%;
+}
+
+.notify-content {
+    display: none;
+}
+
+
+.nItem {
+    margin-bottom: 15px;
+}
+
+.nItem .media {
+}
+
+.nItem .media-heading {
+    color: #999;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+.nItem .media-heading .notify-when {
+    font-size: 10px;
+    font-weight: normal;
+}
+
+.nItem .media-content {
+    font-style: 11px;
+    color: #333;
+}
+
+.nItem .media-footer {
+    padding-right: 30px;
+}
+
+.nItem .media-footer .btn {
+    margin-bottom: 2px;
+}

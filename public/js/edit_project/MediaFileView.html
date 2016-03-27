@@ -1,0 +1,8 @@
+<% if (file) { %>
+<img class="img-responsive" src="/api/v1/files/<%= file._id %>/thumb?height=<%= img_height %>&amp;width=<%= img_width %>" style="max-height: 180px;" />
+<h5><%= file.name %></h5>
+<button class="btn btn-sm btn-danger remove-item" data-file="<%= _id %>" data-type="<%= file.type %>">Remove</button>
+<% } else { %>
+<img class="img-responsive" src="/api/v1/files/<%= _id %>/thumb?height=<%= img_height %>&amp;width=<%= img_width %>" style="max-height: 180px;" />
+<h5><%= name %></h5>
+<% } %>

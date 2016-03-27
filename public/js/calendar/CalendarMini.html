@@ -1,0 +1,42 @@
+<div class="row">
+
+    <div class="col-sm-12">
+        <div class="calendar-view clearfix"><a class="view-all" data-type="all" href="#user/<%= extras.username %>/calendar">View</a></div>
+    </div>
+
+</div>
+
+<div class="row">
+
+	<button type="button" class="calendar-btn-prev clndr-previous-button"></button>
+	<button type="button" class="calendar-btn-next clndr-next-button"></button>
+
+    <div class="col-md-3 col-sm-offset-1 calendar-meta">
+        <div class="calendar-year"><%= ("" + year).slice(0, 2) %><span><%= ("" + year).slice(2) %></span></div>
+        <div class="calendar-month"><%= month.substring(0, 3).toUpperCase() %></div>
+        <div class="calendar-enquire"><button class="btn btn-simple btn-enquire">Enquire</button></div>
+    </div>
+
+	<div class="col-md-7 calendar-wrapper">
+		<table class="calendar-grid" border="0" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr class="header-days">
+					<% for (var i = 0; i < daysOfTheWeek.length; i++) { %>
+					<td class="header-day"><span><%= daysOfTheWeek[i] %></span></td>
+					<% } %>
+				</tr>
+			</thead>
+			<tbody>
+				<% for (var i = 0; i < numberOfRows; i++){ %>
+				<tr>
+					<% for (var j = 0; j < 7; j++) { %>
+					<% var d = j + i * 7; %>
+					<td class='<%= days[d].classes %>'><div class="day-contents"><%= days[d].day %></div></td>
+					<% } %>
+				</tr>
+				<% } %>
+			</tbody>
+		</table>
+	</div>
+
+</div>

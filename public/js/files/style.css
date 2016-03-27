@@ -1,0 +1,9 @@
+.wrapper.files-nav {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.files .nav-tabs {
+    margin-bottom: 0;
+    border-bottom: 0;
+}
